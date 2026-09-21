@@ -1,0 +1,86 @@
+/* ===========================================================
+   BEQ EMPREENDIMENTOS
+   Arquivo: cores.css
+   Descrição: Variáveis globais de cores do sistema.
+   Autor: Rocha Digital
+   Versão: 2.0
+=========================================================== */
+
+:root{
+
+    /* =======================================================
+       IDENTIDADE DA MARCA
+    ======================================================= */
+
+    --color-primary: #0A3D91;
+    --color-primary-hover: #0D47A1;
+    --color-primary-light: #2563EB;
+    --color-primary-soft: #38BDF8;
+    --color-accent: #06B6D4;
+
+    /* =======================================================
+       FUNDOS
+    ======================================================= */
+
+    --bg-body: #F4F7FB;
+    --bg-page: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --bg-sidebar: #0B2344;
+    --bg-sidebar-hover: #13315C;
+    --bg-sidebar-active: #1D4ED8;
+    --bg-topbar: #FFFFFF;
+    --bg-input: #FFFFFF;
+    --bg-table-header: #F8FAFC;
+
+    /* =======================================================
+       TEXTOS
+    ======================================================= */
+
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+    --text-muted: #94A3B8;
+    --text-white: #FFFFFF;
+
+    /* =======================================================
+       BORDAS
+    ======================================================= */
+
+    --border-color: #E2E8F0;
+    --border-light: #F1F5F9;
+
+    /* =======================================================
+       STATUS
+    ======================================================= */
+
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+    --info: #0EA5E9;
+
+    /* =======================================================
+       BADGES
+    ======================================================= */
+
+    --badge-success-bg: #DCFCE7;
+    --badge-warning-bg: #FEF3C7;
+    --badge-danger-bg: #FEE2E2;
+    --badge-info-bg: #DBEAFE;
+
+    --badge-success-text: #166534;
+    --badge-warning-text: #92400E;
+    --badge-danger-text: #991B1B;
+    --badge-info-text: #1E40AF;
+
+    /* =======================================================
+       GRÁFICOS
+    ======================================================= */
+
+    --chart-blue: #2563EB;
+    --chart-cyan: #06B6D4;
+    --chart-green: #22C55E;
+    --chart-yellow: #F59E0B;
+    --chart-red: #EF4444;
+    --chart-purple: #7C3AED;
+    --chart-orange: #F97316;
+
+}

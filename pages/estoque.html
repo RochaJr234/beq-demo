@@ -1,0 +1,587 @@
+<!-- ==========================================================
+     BEQ EMPREENDIMENTOS
+     Módulo: Estoque
+     Arquivo: pages/estoque.html
+     Responsabilidade: Controle de estoque e distribuição
+     Autor: Rocha Digital
+========================================================== -->
+
+<section class="estoque">
+
+    <!-- CABEÇALHO -->
+    <div class="estoque-header">
+        <div class="estoque-titulo">
+            <div class="estoque-titulo-icone">
+                <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+
+            <div>
+                <h1>Estoque</h1>
+                <p class="estoque-subtitulo">
+                    Controle do estoque geral e distribuição de materiais para obras.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- INDICADORES -->
+    <div class="estoque-indicadores">
+
+        <div class="estoque-indicador">
+            <div class="estoque-indicador-icone">
+                <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+            <div>
+                <span>Itens em Estoque</span>
+                <strong id="estoqueTotalItens">0</strong>
+            </div>
+        </div>
+
+        <div class="estoque-indicador">
+            <div class="estoque-indicador-icone">
+                <i class="fa-solid fa-cube"></i>
+            </div>
+            <div>
+                <span>Produtos em Estoque</span>
+                <strong id="estoqueTotalProdutos">0</strong>
+            </div>
+        </div>
+
+        <div class="estoque-indicador">
+            <div class="estoque-indicador-icone">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+            </div>
+            <div>
+                <span>Materiais Distribuídos</span>
+                <strong id="estoqueTotalDistribuido">0</strong>
+            </div>
+        </div>
+
+        <div class="estoque-indicador">
+            <div class="estoque-indicador-icone">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div>
+                <span>Estoque Baixo</span>
+                <strong id="estoqueTotalBaixo">0</strong>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ESTOQUE GERAL -->
+    <div class="estoque-card">
+
+        <div class="estoque-card-header">
+
+            <div class="estoque-card-titulo">
+                <i class="fa-solid fa-layer-group"></i>
+
+                <div>
+                    <h2>Estoque Geral</h2>
+                    <p>Materiais disponíveis para distribuição.</p>
+                </div>
+            </div>
+
+            <div class="estoque-card-acoes">
+                <button
+                    type="button"
+                    id="btnAbrirDistribuicaoEstoque"
+                    class="btn btn-primary">
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+                    Distribuir Material
+                </button>
+
+                <button
+                    type="button"
+                    id="btnMostrarEstoque"
+                    class="btn btn-secondary">
+                    <i class="fa-solid fa-eye"></i>
+                    Mostrar Estoque
+                </button>
+            </div>
+
+        </div>
+
+        <!-- FILTROS -->
+        <div class="estoque-filtros">
+
+            <div class="form-group estoque-filtro-pesquisa">
+                <label for="pesquisarEstoque">Pesquisar</label>
+                <input
+                    type="search"
+                    id="pesquisarEstoque"
+                    placeholder="Pesquisar produto..."
+                    autocomplete="off">
+            </div>
+
+            <div class="form-group estoque-filtro-categoria">
+                <label for="filtroCategoriaEstoque">Categoria</label>
+                <select id="filtroCategoriaEstoque">
+                    <option value="">Todas as categorias</option>
+                </select>
+            </div>
+
+        </div>
+
+        <!-- TABELA -->
+        <div
+            class="estoque-tabela-container"
+            id="cardTabelaEstoque">
+
+            <div class="table-responsive">
+                <table class="table estoque-tabela">
+
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Categoria</th>
+                            <th>Unidade</th>
+                            <th>Estoque</th>
+                            <th>Situação</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaEstoque"></tbody>
+
+                </table>
+            </div>
+
+            <div
+                class="estoque-estado-vazio"
+                id="estadoVazioEstoque"
+                hidden>
+
+                <i class="fa-solid fa-box-open"></i>
+
+                <h3>Nenhum produto encontrado</h3>
+
+                <p>
+                    Não existem produtos correspondentes aos filtros informados.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================================
+         MODAL — DISTRIBUIÇÃO DE MATERIAIS
+    =========================================================== -->
+
+    <div
+        id="modalDistribuicaoEstoque"
+        class="modal-distribuicao-estoque"
+        hidden
+        aria-hidden="true">
+
+        <div
+            class="modal-distribuicao-overlay"
+            data-fechar-distribuicao>
+        </div>
+
+        <div
+            class="modal-distribuicao-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="tituloModalDistribuicao">
+
+            <!-- CABEÇALHO DO MODAL -->
+            <div class="modal-distribuicao-header">
+
+                <div class="modal-distribuicao-titulo">
+
+                    <div class="modal-distribuicao-icone">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+
+                    <div>
+                        <h2 id="tituloModalDistribuicao">
+                            Distribuição de Materiais
+                        </h2>
+
+                        <p>
+                            Monte o romaneio com os materiais que serão enviados para a obra.
+                        </p>
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="btnFecharDistribuicaoEstoque"
+                    class="modal-distribuicao-fechar"
+                    aria-label="Fechar">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <!-- FORMULÁRIO -->
+            <form id="formDistribuicaoEstoque">
+
+                <div class="modal-distribuicao-corpo">
+
+                    <!-- DADOS DA DISTRIBUIÇÃO -->
+                    <section class="modal-distribuicao-secao">
+
+                        <div class="modal-distribuicao-secao-titulo">
+
+                            <div class="modal-distribuicao-secao-icone">
+                                <i class="fa-solid fa-clipboard-list"></i>
+                            </div>
+
+                            <div>
+                                <h3>Dados da Distribuição</h3>
+                                <p>
+                                    Informe os dados do transporte e destino.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="modal-distribuicao-dados-grid">
+
+                            <div class="form-group campo-obra">
+                                <label for="obraDestinoEstoque">
+                                    Obra <span class="campo-obrigatorio">*</span>
+                                </label>
+
+                                <select
+                                    id="obraDestinoEstoque"
+                                    required>
+                                    <option value="">
+                                        Selecione a obra
+                                    </option>
+                                </select>
+                            </div>
+
+
+                            <div class="form-group campo-data">
+                                <label for="dataDistribuicaoEstoque">
+                                    Data <span class="campo-obrigatorio">*</span>
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="dataDistribuicaoEstoque"
+                                    required>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="motoristaDistribuicaoEstoque">
+                                    Motorista
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="motoristaDistribuicaoEstoque"
+                                    placeholder="Nome do motorista"
+                                    autocomplete="off">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="veiculoDistribuicaoEstoque">
+                                    Veículo
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="veiculoDistribuicaoEstoque"
+                                    placeholder="Ex.: Caminhão / Fiorino / Van"
+                                    autocomplete="off">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="placaDistribuicaoEstoque">
+                                    Placa
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="placaDistribuicaoEstoque"
+                                    placeholder="ABC-1D23"
+                                    autocomplete="off">
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- MATERIAIS -->
+                    <section class="modal-distribuicao-secao">
+
+                        <div class="modal-distribuicao-secao-titulo">
+
+                            <div class="modal-distribuicao-secao-icone">
+                                <i class="fa-solid fa-cubes-stacked"></i>
+                            </div>
+
+                            <div>
+                                <h3>Materiais para Distribuição</h3>
+                                <p>
+                                    Adicione os materiais que serão enviados nesta distribuição.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="modal-distribuicao-material-grid">
+
+                            <div class="form-group">
+                                <label for="produtoDistribuicaoEstoque">
+                                    Produto <span class="campo-obrigatorio">*</span>
+                                </label>
+
+                                <select
+                                    id="produtoDistribuicaoEstoque"
+                                    required>
+                                    <option value="">
+                                        Selecione o produto
+                                    </option>
+                                </select>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="quantidadeDistribuicaoEstoque">
+                                    Quantidade <span class="campo-obrigatorio">*</span>
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="quantidadeDistribuicaoEstoque"
+                                    min="0.01"
+                                    step="0.01"
+                                    value="1"
+                                    required>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="unidadeDistribuicaoEstoque">
+                                    Unidade
+                                </label>
+
+                                <select id="unidadeDistribuicaoEstoque">
+                                    <option value="UN">UN</option>
+                                    <option value="KG">KG</option>
+                                    <option value="M">M</option>
+                                    <option value="M²">M²</option>
+                                    <option value="M³">M³</option>
+                                    <option value="L">L</option>
+                                    <option value="SC">SC</option>
+                                    <option value="CX">CX</option>
+                                </select>
+                            </div>
+
+
+                            <div class="modal-distribuicao-material-botao">
+                                <button
+                                    type="button"
+                                    id="btnAdicionarMaterialDistribuicao"
+                                    class="btn btn-primary">
+
+                                    <i class="fa-solid fa-plus"></i>
+                                    Adicionar Material
+
+                                </button>
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="estoqueDisponivelDistribuicao"
+                            class="modal-distribuicao-estoque-info">
+                            O estoque disponível deste produto será exibido automaticamente ao selecionar o material.
+                        </div>
+
+
+                        <!-- LISTA DE MATERIAIS -->
+                        <div
+                            id="cardMateriaisDistribuicao"
+                            class="modal-distribuicao-materiais-lista"
+                            hidden>
+
+                            <div class="table-responsive">
+
+                                <table class="table">
+
+                                    <thead>
+                                        <tr>
+                                            <th>Produto</th>
+                                            <th>Quantidade</th>
+                                            <th>Unidade</th>
+                                            <th>Ação</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="listaMateriaisDistribuicao"></tbody>
+
+                                </table>
+
+                            </div>
+
+                            <div class="estoque-romaneio-total">
+                                <span>Total de itens:</span>
+                                <strong id="totalMateriaisDistribuicao">0</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="estadoVazioMateriaisDistribuicao"
+                            class="modal-distribuicao-vazio">
+
+                            Nenhum material adicionado ao romaneio.
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- OBSERVAÇÃO GERAL -->
+                    <section class="modal-distribuicao-secao modal-distribuicao-observacao">
+
+                        <div class="modal-distribuicao-secao-titulo">
+
+                            <div class="modal-distribuicao-secao-icone">
+                                <i class="fa-solid fa-clipboard"></i>
+                            </div>
+
+                            <div>
+                                <h3>Observação Geral</h3>
+                                <p>
+                                    Informe alguma observação sobre a distribuição, transporte ou entrega.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <textarea
+                            id="observacaoDistribuicaoEstoque"
+                            rows="3"
+                            placeholder="Ex.: Material para fundação da obra..."></textarea>
+
+                    </section>
+
+                </div>
+
+
+                <!-- RODAPÉ -->
+                <div class="modal-distribuicao-footer">
+
+                    <button
+                        type="button"
+                        id="btnLimparDistribuicaoEstoque"
+                        class="btn btn-secondary">
+
+                        <i class="fa-solid fa-xmark"></i>
+                        Cancelar
+
+                    </button>
+
+                    <button
+                        type="submit"
+                        id="btnDistribuirMaterialEstoque"
+                        class="btn btn-primary">
+
+                        <i class="fa-solid fa-truck"></i>
+                        Distribuir e Gerar Romaneio
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- MOVIMENTAÇÕES -->
+    <div class="estoque-card estoque-movimentacoes-card">
+
+        <div class="estoque-card-header">
+
+            <div class="estoque-card-titulo">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <div>
+                    <h2>Movimentações de Estoque</h2>
+                    <p>
+                        Histórico das entradas e distribuições realizadas.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group estoque-pesquisa-movimentacoes">
+
+            <label for="pesquisarMovimentacaoEstoque">
+                Pesquisar
+            </label>
+
+            <input
+                type="search"
+                id="pesquisarMovimentacaoEstoque"
+                placeholder="Pesquisar movimentação..."
+                autocomplete="off">
+
+        </div>
+
+
+        <div class="table-responsive">
+
+            <table class="table estoque-movimentacoes-tabela">
+
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Produto</th>
+                        <th>Tipo</th>
+                        <th>Quantidade</th>
+                        <th>Destino</th>
+                        <th>Observação</th>
+                    </tr>
+                </thead>
+
+                <tbody id="listaMovimentacoesEstoque"></tbody>
+
+            </table>
+
+        </div>
+
+
+        <div
+            class="estoque-estado-vazio"
+            id="estadoVazioMovimentacoesEstoque">
+
+            <i class="fa-solid fa-box-open"></i>
+
+            <p>
+                Nenhuma movimentação registrada.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>

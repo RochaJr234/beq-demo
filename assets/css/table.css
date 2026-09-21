@@ -1,0 +1,286 @@
+/* ===========================================================
+   BEQ EMPREENDIMENTOS
+   Arquivo: table.css
+   Descrição: Estilos oficiais para tabelas do sistema.
+   Autor: Rocha Digital
+   Versão: 2.0
+=========================================================== */
+
+
+/* ===========================================================
+   CONTAINER DA TABELA
+=========================================================== */
+
+.table-container{
+
+    width:100%;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border-color);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-sm);
+
+    overflow:hidden;
+
+}
+
+
+/* ===========================================================
+   SCROLL HORIZONTAL
+=========================================================== */
+
+.table-responsive{
+
+    width:100%;
+
+    overflow-x:auto;
+
+}
+
+
+/* ===========================================================
+   TABELA
+=========================================================== */
+
+.table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:900px;
+
+}
+
+
+/* ===========================================================
+   CABEÇALHO
+=========================================================== */
+
+.table thead{
+
+    background:var(--bg-page);
+
+}
+
+
+/* ===========================================================
+   TÍTULOS
+=========================================================== */
+
+.table th{
+
+    padding:var(--space-16);
+
+    text-align:left;
+
+    font-size:var(--font-sm);
+
+    font-weight:var(--font-bold);
+
+    color:var(--text-primary);
+
+    border-bottom:1px solid var(--border-color);
+
+    white-space:nowrap;
+
+}
+
+
+/* ===========================================================
+   LINHAS
+=========================================================== */
+
+.table tbody tr{
+
+    transition:var(--transition-fast);
+
+}
+
+
+/* ===========================================================
+   HOVER
+=========================================================== */
+
+.table tbody tr:hover{
+
+    background:rgba(37,99,235,.04);
+
+}
+
+
+/* ===========================================================
+   COLUNAS
+=========================================================== */
+
+.table td{
+
+    padding:var(--space-16);
+
+    font-size:var(--font-sm);
+
+    color:var(--text-primary);
+
+    border-bottom:1px solid var(--border-color);
+
+    vertical-align:middle;
+
+}
+
+
+/* ===========================================================
+   ÚLTIMA LINHA
+=========================================================== */
+
+.table tbody tr:last-child td{
+
+    border-bottom:none;
+
+}
+
+
+/* ===========================================================
+   CENTRALIZADO
+=========================================================== */
+
+.table-center{
+
+    text-align:center;
+
+}
+
+
+/* ===========================================================
+   DIREITA
+=========================================================== */
+
+.table-right{
+
+    text-align:right;
+
+}
+
+
+/* ===========================================================
+   AÇÕES
+=========================================================== */
+
+.table-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:var(--space-8);
+
+}
+
+
+/* ===========================================================
+   STATUS
+=========================================================== */
+
+.table-status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:6px 12px;
+
+    border-radius:var(--radius-round);
+
+    font-size:var(--font-xs);
+
+    font-weight:var(--font-bold);
+
+}
+
+
+/* ===========================================================
+   STATUS
+=========================================================== */
+
+.status-success{
+
+    background:rgba(34,197,94,.15);
+
+    color:var(--success);
+
+}
+
+.status-warning{
+
+    background:rgba(245,158,11,.15);
+
+    color:var(--warning);
+
+}
+
+.status-danger{
+
+    background:rgba(239,68,68,.15);
+
+    color:var(--danger);
+
+}
+
+.status-info{
+
+    background:rgba(59,130,246,.15);
+
+    color:var(--info);
+
+}
+
+
+/* ===========================================================
+   PAGINAÇÃO
+=========================================================== */
+
+.table-pagination{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:var(--space-20);
+
+    border-top:1px solid var(--border-color);
+
+}
+
+
+/* ===========================================================
+   TEXTO PAGINAÇÃO
+=========================================================== */
+
+.pagination-info{
+
+    font-size:var(--font-sm);
+
+    color:var(--text-secondary);
+
+}
+
+
+/* ===========================================================
+   BOTÕES PAGINAÇÃO
+=========================================================== */
+
+.pagination-buttons{
+
+    display:flex;
+
+    gap:var(--space-8);
+
+}

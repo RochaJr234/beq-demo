@@ -1,0 +1,297 @@
+/* ===========================================================
+   BEQ EMPREENDIMENTOS
+   Arquivo: tema.css
+   Descrição: Tema oficial e classes globais.
+   Autor: Rocha Digital
+   Versão: 2.0
+=========================================================== */
+
+
+/* ===========================================================
+   TEMA CLARO — PADRÃO
+=========================================================== */
+
+:root {
+
+    --body-background: var(--bg-body);
+    --page-background: var(--bg-page);
+    --card-background: var(--bg-card);
+    --sidebar-background: var(--bg-sidebar);
+    --topbar-background: var(--bg-topbar);
+
+}
+
+
+/* ===========================================================
+   TEMA ESCURO — FUTURO
+=========================================================== */
+
+body.dark {
+
+    --body-background: #0F172A;
+    --page-background: #111827;
+    --card-background: #1E293B;
+    --sidebar-background: #020617;
+    --topbar-background: #1E293B;
+
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --border-color: #334155;
+
+}
+
+
+/* ===========================================================
+   ESTRUTURA PRINCIPAL DO SISTEMA
+=========================================================== */
+
+
+/* ===========================================================
+   ÁREA PRINCIPAL
+=========================================================== */
+
+.main-content {
+
+    margin-left: var(--sidebar-width);
+
+    margin-top: var(--height-topbar);
+
+    min-height: 100vh;
+
+    background: var(--bg-body);
+
+}
+
+
+/* ===========================================================
+   ÁREA DA PÁGINA
+=========================================================== */
+
+.page {
+
+    padding: var(--space-32);
+
+}
+
+
+/* ===========================================================
+   CONTAINER PRINCIPAL
+=========================================================== */
+
+.container {
+
+    width: 100%;
+
+    max-width: 1600px;
+
+    margin: 0 auto;
+
+}
+
+
+/* ===========================================================
+   CONTEÚDO DA PÁGINA
+=========================================================== */
+
+.page-content {
+
+    width: 100%;
+
+}
+
+
+/* ===========================================================
+   SEÇÕES
+=========================================================== */
+
+.section {
+
+    margin-bottom: var(--space-32);
+
+}
+
+
+/* ===========================================================
+   TÍTULOS
+=========================================================== */
+
+.page-title {
+
+    font-size: var(--font-2xl);
+
+    font-weight: var(--font-bold);
+
+    color: var(--text-primary);
+
+    margin-bottom: var(--space-8);
+
+}
+
+
+.page-description {
+
+    font-size: var(--font-md);
+
+    color: var(--text-secondary);
+
+}
+
+
+/* ===========================================================
+   DIVISORES
+=========================================================== */
+
+.divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    background: var(--border-color);
+
+    margin: var(--space-24) 0;
+
+}
+
+
+/* ===========================================================
+   ÁREA FLEXÍVEL
+=========================================================== */
+
+.content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-24);
+
+}
+
+
+/* ===========================================================
+   LINHA
+=========================================================== */
+
+.row {
+
+    display: flex;
+
+    gap: var(--space-24);
+
+}
+
+
+/* ===========================================================
+   COLUNA
+=========================================================== */
+
+.column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-24);
+
+}
+
+
+/* ===========================================================
+   UTILITÁRIOS
+=========================================================== */
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+.flex {
+
+    display: flex;
+
+}
+
+
+.grid {
+
+    display: grid;
+
+}
+
+
+.center {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.space-between {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.text-center {
+
+    text-align: center;
+
+}
+
+
+.w-100 {
+
+    width: 100%;
+
+}
+
+
+.h-100 {
+
+    height: 100%;
+
+}
+
+
+/* ===========================================================
+   TRANSIÇÃO GLOBAL
+=========================================================== */
+
+* {
+
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast);
+
+}
+
+
+/* ===========================================================
+   SIDEBAR RECOLHIDA
+=========================================================== */
+
+body.sidebar-collapsed .sidebar {
+
+    width: var(--sidebar-width-collapsed);
+
+}
+
+
+body.sidebar-collapsed .main-content {
+
+    margin-left: var(--sidebar-width-collapsed);
+
+}

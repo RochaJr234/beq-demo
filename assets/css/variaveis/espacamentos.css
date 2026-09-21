@@ -1,0 +1,103 @@
+/* ===========================================================
+   BEQ EMPREENDIMENTOS
+   Arquivo: espacamentos.css
+   Descrição: Espaçamentos, bordas e dimensões padrão.
+   Autor: Rocha Digital
+   Versão: 2.0
+=========================================================== */
+
+:root{
+
+    /* =======================================================
+       ESPAÇAMENTOS
+    ======================================================= */
+
+    --space-0: 0;
+    --space-2: 2px;
+    --space-4: 4px;
+    --space-8: 8px;
+    --space-12: 12px;
+    --space-16: 16px;
+    --space-20: 20px;
+    --space-24: 24px;
+    --space-32: 32px;
+    --space-40: 40px;
+    --space-48: 48px;
+    --space-56: 56px;
+    --space-64: 64px;
+    --space-72: 72px;
+    --space-80: 80px;
+
+    /* =======================================================
+       BORDER RADIUS
+    ======================================================= */
+
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-2xl: 24px;
+    --radius-round: 999px;
+
+    /* =======================================================
+       ALTURAS PADRÃO
+    ======================================================= */
+
+    --height-input: 44px;
+    --height-button: 44px;
+    --height-topbar: 70px;
+    --height-sidebar-item: 46px;
+    --height-card-header: 60px;
+
+    /* =======================================================
+       LARGURAS
+    ======================================================= */
+
+    --sidebar-width: 270px;
+    --sidebar-collapse-width: 80px;
+    --content-max-width: 1600px;
+
+    /* =======================================================
+       LARGURA DOS COMPONENTES
+    ======================================================= */
+
+    --input-width: 100%;
+    --button-min-width: 140px;
+    --modal-width-sm: 420px;
+    --modal-width-md: 700px;
+    --modal-width-lg: 1000px;
+
+}
+
+/* ===========================================================
+   DIMENSÕES DO SISTEMA
+=========================================================== */
+
+:root{
+
+    /* Sidebar */
+
+    --sidebar-width:260px;
+
+    --sidebar-width-collapsed:85px;
+
+    --height-topbar:80px;
+
+    /* Botões */
+
+    --height-button:44px;
+
+    /* Inputs */
+
+    --height-input:44px;
+
+    /* Itens do menu */
+
+    --height-sidebar-item:48px;
+
+    /* Conteúdo */
+
+    --content-max-width:1600px;
+
+}

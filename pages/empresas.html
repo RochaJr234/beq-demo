@@ -1,0 +1,701 @@
+<section class="empresas">
+
+    <!-- ==========================================================
+         CABEÇALHO
+    =========================================================== -->
+
+    <header class="empresas-header">
+
+        <div class="empresas-titulo">
+
+            <div class="empresas-icone-titulo">
+                <i class="fa-solid fa-building"></i>
+            </div>
+
+            <div>
+                <h1>Empresas</h1>
+
+                <p>
+                    Gerenciamento das empresas e razões sociais
+                    utilizadas no sistema.
+                </p>
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="btn btn-primary"
+            id="btnNovaEmpresa">
+
+            <i class="fa-solid fa-plus"></i>
+
+            <span>
+                Nova Empresa
+            </span>
+
+        </button>
+
+    </header>
+
+
+    <!-- ==========================================================
+         INDICADORES
+    =========================================================== -->
+
+    <section class="empresas-indicadores">
+
+
+        <!-- TOTAL -->
+
+        <article class="empresa-indicador-card">
+
+            <div class="empresa-indicador-conteudo">
+
+                <span class="empresa-indicador-label">
+                    Total de Empresas
+                </span>
+
+                <strong
+                    id="totalEmpresas">
+                    0
+                </strong>
+
+            </div>
+
+            <div class="empresa-indicador-icone">
+                <i class="fa-solid fa-building"></i>
+            </div>
+
+        </article>
+
+
+        <!-- ATIVAS -->
+
+        <article class="empresa-indicador-card">
+
+            <div class="empresa-indicador-conteudo">
+
+                <span class="empresa-indicador-label">
+                    Empresas Ativas
+                </span>
+
+                <strong
+                    id="empresasAtivas">
+                    0
+                </strong>
+
+            </div>
+
+            <div class="empresa-indicador-icone">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+        </article>
+
+
+        <!-- INATIVAS -->
+
+        <article class="empresa-indicador-card">
+
+            <div class="empresa-indicador-conteudo">
+
+                <span class="empresa-indicador-label">
+                    Empresas Inativas
+                </span>
+
+                <strong
+                    id="empresasInativas">
+                    0
+                </strong>
+
+            </div>
+
+            <div class="empresa-indicador-icone">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+
+        </article>
+
+
+        <!-- ESTOQUE -->
+
+        <article class="empresa-indicador-card">
+
+            <div class="empresa-indicador-conteudo">
+
+                <span class="empresa-indicador-label">
+                    Empresas com Estoque
+                </span>
+
+                <strong
+                    id="empresasComEstoque">
+                    0
+                </strong>
+
+            </div>
+
+            <div class="empresa-indicador-icone">
+                <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- ==========================================================
+         PESQUISA
+    =========================================================== -->
+
+    <section class="empresas-card empresas-pesquisa-card">
+
+        <div class="empresas-pesquisa-cabecalho">
+
+            <div>
+
+                <h2>
+                    Pesquisar empresa
+                </h2>
+
+                <p>
+                    Pesquise por razão social, nome fantasia ou CNPJ.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="empresas-pesquisa-area">
+
+            <div class="empresas-pesquisa-campo">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="pesquisarEmpresa"
+                    placeholder="Digite a razão social, nome fantasia ou CNPJ..."
+                    autocomplete="off">
+
+            </div>
+
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                id="btnMostrarEmpresas">
+
+                <i class="fa-solid fa-list"></i>
+
+                Mostrar Empresas
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================================
+         TABELA DE EMPRESAS
+    =========================================================== -->
+
+    <section
+        class="empresas-card"
+        id="cardTabelaEmpresas">
+
+        <div class="empresas-card-header">
+
+            <div>
+
+                <h2>
+                    Empresas cadastradas
+                </h2>
+
+                <p>
+                    Empresas disponíveis para utilização no ERP.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-responsive">
+
+            <table class="table empresas-tabela">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Código
+                        </th>
+
+                        <th>
+                            Razão Social
+                        </th>
+
+                        <th>
+                            Nome Fantasia
+                        </th>
+
+                        <th>
+                            CNPJ
+                        </th>
+
+                        <th>
+                            Cidade
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Ações
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="listaEmpresas">
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- ESTADO VAZIO -->
+
+        <div
+            id="estadoVazioEmpresas"
+            class="estado-vazio">
+
+            <div class="estado-vazio-icone">
+                <i class="fa-solid fa-building"></i>
+            </div>
+
+            <h3>
+                Nenhuma empresa cadastrada
+            </h3>
+
+            <p>
+                Cadastre a primeira empresa para começar
+                a organizar os dados do ERP.
+            </p>
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="btnNovaEmpresaVazio">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Nova Empresa
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================================
+         MODAL EMPRESA
+    =========================================================== -->
+
+    <div
+        id="modalEmpresa"
+        class="modal-overlay hidden">
+
+
+        <div class="modal-container empresas-modal">
+
+
+            <!-- CABEÇALHO -->
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2 id="tituloModalEmpresa">
+                        Nova Empresa
+                    </h2>
+
+                    <p>
+                        Cadastre os dados da empresa.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="fecharModalEmpresa"
+                    aria-label="Fechar">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- FORMULÁRIO -->
+
+            <form
+                id="formEmpresa"
+                autocomplete="off">
+
+
+                <!-- IDENTIFICAÇÃO -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-building"></i>
+
+                        <span>
+                            Identificação da Empresa
+                        </span>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="empresaCodigo">
+                                Código
+                            </label>
+
+                            <input
+                                type="text"
+                                id="empresaCodigo"
+                                readonly>
+
+                        </div>
+
+
+                        <div class="form-group form-col-span-2">
+
+                            <label for="empresaRazaoSocial">
+                                Razão Social
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="empresaRazaoSocial"
+                                placeholder="Ex.: BEQ Empreendimentos Ltda."
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group form-col-span-2">
+
+                            <label for="empresaNomeFantasia">
+                                Nome Fantasia
+                            </label>
+
+                            <input
+                                type="text"
+                                id="empresaNomeFantasia"
+                                placeholder="Ex.: BEQ Empreendimentos">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="empresaCnpj">
+                                CNPJ
+                            </label>
+
+                            <input
+                                type="text"
+                                id="empresaCnpj"
+                                placeholder="00.000.000/0000-00"
+                                maxlength="18">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="empresaInscricaoEstadual">
+                                Inscrição Estadual
+                            </label>
+
+                            <input
+                                type="text"
+                                id="empresaInscricaoEstadual"
+                                placeholder="Inscrição Estadual">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="empresaStatus">
+                                Status
+                            </label>
+
+                            <select id="empresaStatus">
+
+                                <option value="Ativa">
+                                    Ativa
+                                </option>
+
+                                <option value="Inativa">
+                                    Inativa
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTATO -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-address-book"></i>
+
+                        <span>
+                            Contato
+                        </span>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="empresaTelefone">
+                                Telefone
+                            </label>
+
+                            <input
+                                type="text"
+                                id="empresaTelefone"
+                                placeholder="(00) 00000-0000">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="empresaEmail">
+                                E-mail
+                            </label>
+
+                            <input
+                                type="email"
+                                id="empresaEmail"
+                                placeholder="empresa@email.com">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ENDEREÇO -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <span>
+                            Endereço
+                        </span>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="empresaCep">
+                                CEP
+                            </label>
+
+                            <input
+                                type="text"
+                                id="empresaCep"
+                                placeholder="00000-000"
+                                maxlength="9">
+
+                        </div>
+
+
+                        <div class="form-group form-col-span-2">
+
+                            <label for="empresaEndereco">
+                                Endereço
+                            </label>
+
+                            <input
+                                type="text"
+                                id="empresaEndereco"
+                                placeholder="Rua, avenida, número...">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="empresaCidade">
+                                Cidade
+                            </label>
+
+                            <input
+                                type="text"
+                                id="empresaCidade"
+                                placeholder="Cidade">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="empresaEstado">
+                                Estado
+                            </label>
+
+                            <select id="empresaEstado">
+
+                                <option value="">
+                                    Selecione
+                                </option>
+
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AP">AP</option>
+                                <option value="AM">AM</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MT">MT</option>
+                                <option value="MS">MS</option>
+                                <option value="MG">MG</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PR">PR</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RS">RS</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="SC">SC</option>
+                                <option value="SP">SP</option>
+                                <option value="SE">SE</option>
+                                <option value="TO">TO</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OBSERVAÇÕES -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-note-sticky"></i>
+
+                        <span>
+                            Observações
+                        </span>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="empresaObservacoes">
+                            Observações
+                        </label>
+
+                        <textarea
+                            id="empresaObservacoes"
+                            rows="4"
+                            placeholder="Informações adicionais sobre a empresa...">
+                        </textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AÇÕES -->
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="cancelarEmpresa">
+
+                        Cancelar
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="salvarEmpresa">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Salvar Empresa
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,805 @@
+/* ===========================================================
+
+   BEQ EMPREENDIMENTOS
+
+   Arquivo: style.css
+
+   Descrição: Arquivo principal de estilos do sistema.
+
+   Autor: Rocha Digital
+
+   Versão: 2.0
+
+=========================================================== */
+
+
+/* ===========================================================
+
+   DESIGN SYSTEM
+
+=========================================================== */
+
+@import url("variaveis/reset.css");
+
+@import url("variaveis/cores.css");
+
+@import url("variaveis/fontes.css");
+
+@import url("variaveis/espacamentos.css");
+
+@import url("variaveis/sombras.css");
+
+@import url("variaveis/animacoes.css");
+
+@import url("variaveis/tema.css");
+
+
+/* ===========================================================
+
+   COMPONENTES
+
+=========================================================== */
+
+@import url("buttons.css");
+
+@import url("cards.css");
+
+@import url("form.css");
+
+@import url("table.css");
+
+@import url("modal.css");
+
+@import url("sidebar.css");
+
+@import url("topbar.css");
+
+@import url("layout.css");
+
+@import url("responsivo.css");
+
+
+/* ===========================================================
+
+   MÓDULOS
+
+=========================================================== */
+
+@import url("modulos/dashboard.css");
+
+@import url("modulos/produtos.css");
+
+@import url("modulos/fornecedores.css");
+
+@import url("modulos/clientes.css");
+
+@import url("modulos/obras.css");
+
+@import url("modulos/estoque.css");
+
+@import url("modulos/compras.css");
+
+@import url("modulos/cotacoes.css");
+
+@import url("modulos/relatorios.css");
+
+@import url("modulos/usuarios.css");
+
+@import url("modulos/configuracoes.css");
+
+@import url("modulos/empresas.css");
+
+/* ==========================================================
+   EMPRESA ATIVA - TOPBAR
+   ========================================================== */
+
+.empresa-ativa-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-width: 280px;
+    max-width: 380px;
+
+    padding: 8px 16px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+
+    margin: 0 20px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
+}
+
+
+/* ÍCONE */
+
+.empresa-ativa-header > i {
+    width: 36px;
+    height: 36px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #EFF6FF;
+
+    color: #2563EB;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+}
+
+
+/* ÁREA DE TEXTO */
+
+.empresa-ativa-info {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+
+/* PEQUENO TÍTULO */
+
+.empresa-ativa-label {
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    color: #64748b;
+
+    line-height: 1.2;
+}
+
+
+/* NOME DA EMPRESA */
+
+.empresa-ativa-info strong {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #17365D;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* EFEITO AO PASSAR O MOUSE */
+
+.empresa-ativa-header:hover {
+    border-color: #BFDBFE;
+
+    background: #F8FBFF;
+
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.07);
+
+    transform: translateY(-1px);
+}
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+
+@media (max-width: 1100px) {
+
+    .empresa-ativa-header {
+        min-width: 220px;
+
+        margin: 0 10px;
+
+        padding: 8px 12px;
+    }
+
+    .empresa-ativa-info strong {
+        font-size: 12px;
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .empresa-ativa-header {
+        min-width: auto;
+
+        max-width: 220px;
+    }
+
+    .empresa-ativa-label {
+        font-size: 8px;
+    }
+
+    .empresa-ativa-info strong {
+        font-size: 11px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .empresa-ativa-header {
+        display: none;
+    }
+
+}
+
+/* ==========================================================
+   BEQ EMPREENDIMENTOS
+   SIDEBAR — ÁREA DA LOGO V2
+========================================================== */
+
+
+/* ==========================================================
+   ÁREA PRINCIPAL DA LOGO
+========================================================== */
+
+.sidebar-logo {
+
+    position: relative;
+
+    min-height: 145px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 22px 18px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #071a33 0%,
+            #0b2d52 55%,
+            #0d3965 100%
+        );
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+/* ==========================================================
+   LUZ SUAVE NO FUNDO
+========================================================== */
+
+.sidebar-logo::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+
+    height: 170px;
+
+    top: -95px;
+
+    right: -65px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            59,
+            130,
+            246,
+            .14
+        );
+
+    filter:
+        blur(5px);
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   LINHA DECORATIVA INFERIOR
+========================================================== */
+
+.sidebar-logo::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+
+    right: 18px;
+
+    bottom: 0;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.18),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.sidebar-logo img {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    width: auto;
+
+    max-width: 90%;
+
+    max-height: 92px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 8px 16px
+            rgba(0,0,0,.30)
+        );
+
+    transition:
+        transform .25s ease,
+        filter .25s ease;
+}
+
+
+/* ==========================================================
+   EFEITO AO PASSAR O MOUSE
+========================================================== */
+
+.sidebar-logo:hover img {
+
+    transform:
+        scale(1.035);
+
+    filter:
+        drop-shadow(
+            0 10px 20px
+            rgba(0,0,0,.38)
+        );
+}
+
+
+/* ==========================================================
+   PEQUENO BRILHO ATRÁS DA LOGO
+========================================================== */
+
+.sidebar-logo img {
+
+    isolation: isolate;
+}
+
+
+/* ==========================================================
+   ÁREA DE IDENTIDADE
+========================================================== */
+
+.sidebar-logo {
+
+    flex-direction:
+        column;
+
+    gap:
+        8px;
+}
+
+
+/* ==========================================================
+   TEXTO INSTITUCIONAL CRIADO PELO CSS
+========================================================== */
+
+.sidebar-logo > span {
+
+    display: none;
+}
+
+
+/* ==========================================================
+   SEPARAÇÃO DA LOGO PARA O MENU
+========================================================== */
+
+.sidebar-menu {
+
+    padding-top:
+        10px;
+}
+
+
+/* ==========================================================
+   PRIMEIRO ITEM DO MENU
+========================================================== */
+
+.sidebar-menu .sidebar-item:first-child {
+
+    margin-top:
+        4px;
+}
+
+
+/* ==========================================================
+   VISUAL MAIS REFINADO DOS ITENS
+========================================================== */
+
+.sidebar-item {
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+
+.sidebar-item:hover {
+
+    transform:
+        translateX(2px);
+}
+
+
+/* ==========================================================
+   ITEM ATIVO
+========================================================== */
+
+.sidebar-item.active {
+
+    box-shadow:
+        inset 3px 0 0 #3b82f6,
+        0 4px 14px
+        rgba(
+            0,
+            0,
+            0,
+            .10
+        );
+}
+
+
+/* ==========================================================
+   ÍCONES
+========================================================== */
+
+.sidebar-item i {
+
+    transition:
+        transform .2s ease;
+}
+
+
+.sidebar-item:hover i {
+
+    transform:
+        scale(1.08);
+}
+
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+
+@media (max-width: 700px) {
+
+    .sidebar-logo {
+
+        min-height:
+            120px;
+
+        padding:
+            18px 14px;
+    }
+
+
+    .sidebar-logo img {
+
+        max-height:
+            76px;
+
+        max-width:
+            88%;
+    }
+
+}
+
+/* =========================================================
+   LOGO LATERAL — BEQ EMPREENDIMENTOS
+   ========================================================= */
+
+.sidebar-logo {
+    position: relative;
+    height: 138px;
+    min-height: 138px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px 20px;
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(37, 99, 235, 0.20),
+            transparent 55%
+        ),
+        linear-gradient(
+            145deg,
+            #071a33 0%,
+            #0a2545 55%,
+            #0c3158 100%
+        );
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* brilho suave atrás da logo */
+.sidebar-logo::before {
+    content: "";
+    position: absolute;
+
+    width: 170px;
+    height: 100px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: rgba(59, 130, 246, 0.12);
+
+    filter: blur(30px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* linha discreta na parte inferior */
+.sidebar-logo::after {
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+    bottom: 0;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(59, 130, 246, 0.45),
+        transparent
+    );
+
+    pointer-events: none;
+}
+
+
+/* logo */
+.sidebar-logo img {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    width: auto;
+    max-width: 88%;
+    max-height: 92px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 8px 14px rgba(0, 0, 0, 0.35))
+        drop-shadow(0 0 10px rgba(255, 255, 255, 0.04));
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+
+/* pequeno efeito ao passar o mouse */
+.sidebar-logo:hover img {
+    transform: scale(1.03);
+
+    filter:
+        drop-shadow(0 10px 18px rgba(0, 0, 0, 0.38))
+        drop-shadow(0 0 14px rgba(59, 130, 246, 0.12));
+}
+
+
+/* espaço entre logo e primeiro item */
+.sidebar-menu {
+    padding-top: 10px;
+}
+
+
+/* primeiro botão do menu */
+.sidebar-menu .sidebar-item:first-child {
+    margin-top: 4px;
+}
+
+/* =========================================================
+   ARTE LATERAL — B&Q
+   ========================================================= */
+
+.sidebar-logo {
+    position: relative;
+
+    width: 100%;
+    height: 250px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #071a33;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-sizing: border-box;
+}
+
+
+/* IMAGEM */
+.sidebar-logo img {
+    width: 108% !important;
+    height: 108% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: center;
+
+    margin: 0;
+
+    transform: translateX(-15px);
+
+    transition: transform 0.3s ease;
+}
+
+
+/* HOVER */
+.sidebar-logo:hover img {
+    transform: translateX(-15px) scale(1.01);
+}
+
+
+/* MENU */
+.sidebar-menu {
+    padding-top: 8px;
+}
+/* =========================================================
+   ARTE COMPLETA
+   ========================================================= */
+
+.sidebar-logo img {
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: center center;
+
+    margin: 0;
+    padding: 0;
+
+    background: #071a33;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* =========================================================
+   EFEITO SUAVE
+   ========================================================= */
+
+.sidebar-logo:hover img {
+    transform: scale(1.015);
+}
+
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
+.sidebar-menu {
+    padding-top: 8px;
+}
+
+/* =========================================================
+   IMAGEM DA IDENTIDADE VISUAL
+   ========================================================= */
+
+.sidebar-logo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: center center;
+
+    margin: 0;
+    padding: 0;
+
+    background: #071a33;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* =========================================================
+   EFEITO AO PASSAR O MOUSE
+   ========================================================= */
+
+.sidebar-logo:hover img {
+    transform: scale(1.02);
+}
+
+
+/* =========================================================
+   MENU ABAIXO DA ARTE
+   ========================================================= */
+
+.sidebar-menu {
+    padding-top: 8px;
+}

@@ -1,0 +1,747 @@
+<!-- ==========================================================
+     BEQ EMPREENDIMENTOS
+     MÓDULO: COMPRAS
+     Arquivo: pages/compras.html
+
+     Responsabilidade:
+     - Interface do módulo de compras
+     - Registro de novas compras
+     - Seleção de fornecedor
+     - Inclusão de produtos
+     - Resumo da compra
+     - Histórico de compras
+
+     Observação:
+     Este arquivo contém somente a estrutura HTML.
+     A lógica será implementada em compras.js.
+========================================================== -->
+
+<section class="compras">
+
+    <!-- ======================================================
+         CABEÇALHO
+    ======================================================= -->
+
+    <div class="compras-header">
+
+        <div class="compras-header-info">
+
+            <div class="compras-titulo">
+
+                <span class="compras-icone-titulo">
+                    <i class="fas fa-cart-shopping"></i>
+                </span>
+
+                <div>
+
+                    <h1>Compras</h1>
+
+                    <p>
+                        Gerencie suas compras e abasteça o estoque
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            id="btnNovaCompra"
+            class="btn btn-primary"
+        >
+
+            <i class="fas fa-plus"></i>
+
+            Nova Compra
+
+        </button>
+
+    </div>
+
+
+    <!-- ======================================================
+         INDICADORES
+    ======================================================= -->
+
+    <div class="compras-indicadores">
+
+        <!-- TOTAL DE COMPRAS -->
+
+        <div class="compra-indicador">
+
+            <div class="compra-indicador-icone">
+                <i class="fas fa-cart-shopping"></i>
+            </div>
+
+            <div class="compra-indicador-info">
+
+                <span>Total de Compras</span>
+
+                <strong id="totalCompras">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- VALOR TOTAL -->
+
+        <div class="compra-indicador">
+
+            <div class="compra-indicador-icone">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+
+            <div class="compra-indicador-info">
+
+                <span>Valor Total</span>
+
+                <strong id="valorTotalCompras">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- COMPRAS DO MÊS -->
+
+        <div class="compra-indicador">
+
+            <div class="compra-indicador-icone">
+                <i class="fas fa-calendar-days"></i>
+            </div>
+
+            <div class="compra-indicador-info">
+
+                <span>Compras do Mês</span>
+
+                <strong id="comprasMes">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ÚLTIMA COMPRA -->
+
+        <div class="compra-indicador">
+
+            <div class="compra-indicador-icone">
+                <i class="fas fa-clock"></i>
+            </div>
+
+            <div class="compra-indicador-info">
+
+                <span>Última Compra</span>
+
+                <strong id="ultimaCompra">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================================================
+         ÁREA PRINCIPAL
+    ======================================================= -->
+
+    <div class="compras-conteudo">
+
+
+        <!-- ==================================================
+             ÁREA DE NOVA COMPRA
+        =================================================== -->
+
+        <div
+            id="areaNovaCompra"
+            class="compras-card"
+        >
+
+            <div class="compras-card-header">
+
+                <div>
+
+                    <h2>
+                        <i class="fas fa-file-invoice"></i>
+                        Nova Compra
+                    </h2>
+
+                    <p>
+                        Informe os dados da compra
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================================
+                 DADOS DA COMPRA
+            =============================================== -->
+
+            <div class="compras-form">
+
+                <!-- FORNECEDOR -->
+
+                <div class="form-group">
+
+                    <label for="compraFornecedor">
+                        Fornecedor
+                    </label>
+
+                    <select id="compraFornecedor">
+
+                        <option value="">
+                            Selecione o fornecedor
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DATA -->
+
+                <div class="form-group">
+
+                    <label for="compraData">
+                        Data da Compra
+                    </label>
+
+                    <input
+                        type="date"
+                        id="compraData"
+                    >
+
+                </div>
+
+
+                <!-- NÚMERO DA NOTA -->
+
+                <div class="form-group">
+
+                    <label for="compraNota">
+                        Nota Fiscal
+                    </label>
+
+                    <input
+                        type="text"
+                        id="compraNota"
+                        placeholder="Número da nota fiscal"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- OBSERVAÇÃO -->
+
+                <div class="form-group compras-form-observacao">
+
+                    <label for="compraObservacao">
+                        Observação
+                    </label>
+
+                    <input
+                        type="text"
+                        id="compraObservacao"
+                        placeholder="Observações da compra"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================================
+                 ADICIONAR PRODUTO
+            =============================================== -->
+
+            <div class="compras-produtos-area">
+
+                <div class="compras-secao-titulo">
+
+                    <div>
+
+                        <h3>
+                            <i class="fas fa-box"></i>
+                            Produtos da Compra
+                        </h3>
+
+                        <p>
+                            Adicione os produtos e informe as quantidades
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+                     FORMULÁRIO DO ITEM
+                =========================================== -->
+
+                <div
+                    id="formItemCompra"
+                    class="compras-item-form"
+                >
+
+                    <!-- PRODUTO -->
+
+                    <div class="form-group">
+
+                        <label for="compraProduto">
+                            Produto
+                        </label>
+
+                        <select id="compraProduto">
+
+                            <option value="">
+                                Selecione o produto
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- QUANTIDADE -->
+
+                    <div class="form-group">
+
+                        <label for="compraQuantidade">
+                            Quantidade
+                        </label>
+
+                        <input
+                            type="number"
+                            id="compraQuantidade"
+                            min="1"
+                            step="1"
+                            placeholder="0"
+                        >
+
+                    </div>
+
+
+                    <!-- PREÇO UNITÁRIO -->
+
+                    <div class="form-group">
+
+                        <label for="compraPrecoUnitario">
+                            Preço Unitário
+                        </label>
+
+                        <input
+                            type="number"
+                            id="compraPrecoUnitario"
+                            min="0"
+                            step="0.01"
+                            placeholder="0,00"
+                        >
+
+                    </div>
+
+
+                    <!-- SUBTOTAL -->
+
+                    <div class="form-group">
+
+                        <label for="compraSubtotal">
+                            Subtotal
+                        </label>
+
+                        <input
+                            type="text"
+                            id="compraSubtotal"
+                            value="R$ 0,00"
+                            readonly
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+                     BOTÃO ADICIONAR PRODUTO
+                =========================================== -->
+
+                <div class="compras-item-acoes">
+
+                    <button
+                        type="button"
+                        id="btnAdicionarProdutoCompra"
+                        class="btn btn-secondary"
+                    >
+
+                        <i class="fas fa-plus"></i>
+
+                        Adicionar Produto
+
+                    </button>
+
+                </div>
+
+
+                <!-- ==========================================
+                     TABELA DE PRODUTOS
+                =========================================== -->
+
+                <div
+                    id="cardTabelaItensCompra"
+                    class="compras-tabela-container"
+                >
+
+                    <table class="compras-tabela">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Produto
+                                </th>
+
+                                <th>
+                                    Código
+                                </th>
+
+                                <th>
+                                    Quantidade
+                                </th>
+
+                                <th>
+                                    Preço Unitário
+                                </th>
+
+                                <th>
+                                    Subtotal
+                                </th>
+
+                                <th>
+                                    Ações
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="listaItensCompra">
+
+                            <!--
+                                Os itens serão inseridos
+                                pelo compras.js.
+                            -->
+
+                        </tbody>
+
+                    </table>
+
+
+                    <!-- ESTADO VAZIO -->
+
+                    <div
+                        id="estadoVazioItensCompra"
+                        class="compras-estado-vazio"
+                    >
+
+                        <i class="fas fa-box-open"></i>
+
+                        <h3>
+                            Nenhum produto adicionado
+                        </h3>
+
+                        <p>
+                            Adicione os produtos que fazem parte desta compra.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================================
+                 RESUMO DA COMPRA
+            =============================================== -->
+
+            <div class="compras-resumo">
+
+                <div class="compras-resumo-info">
+
+                    <span>
+                        Total de itens
+                    </span>
+
+                    <strong id="totalItensCompra">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="compras-resumo-total">
+
+                    <span>
+                        Total da Compra
+                    </span>
+
+                    <strong id="totalCompra">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================================
+                 AÇÕES DA COMPRA
+            =============================================== -->
+
+            <div class="compras-acoes">
+
+                <button
+                    type="button"
+                    id="btnCancelarCompra"
+                    class="btn btn-secondary"
+                >
+
+                    <i class="fas fa-times"></i>
+
+                    Cancelar
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="btnFinalizarCompra"
+                    class="btn btn-primary"
+                >
+
+                    <i class="fas fa-check"></i>
+
+                    Finalizar Compra
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             HISTÓRICO DE COMPRAS
+        =================================================== -->
+
+        <div class="compras-card">
+
+            <div class="compras-card-header">
+
+                <div>
+
+                    <h2>
+                        <i class="fas fa-clock-rotate-left"></i>
+                        Histórico de Compras
+                    </h2>
+
+                    <p>
+                        Consulte as compras realizadas
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================================
+                 FILTROS
+            =============================================== -->
+
+            <div class="compras-filtros">
+
+                <div class="form-group">
+
+                    <label for="pesquisarCompra">
+                        Pesquisar
+                    </label>
+
+                    <div class="compras-campo-pesquisa">
+
+                        <i class="fas fa-search"></i>
+
+                        <input
+                            type="text"
+                            id="pesquisarCompra"
+                            placeholder="Pesquisar compra..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="filtroFornecedorCompra">
+                        Fornecedor
+                    </label>
+
+                    <select id="filtroFornecedorCompra">
+
+                        <option value="">
+                            Todos os fornecedores
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="filtroDataCompra">
+                        Período
+                    </label>
+
+                    <select id="filtroDataCompra">
+
+                        <option value="">
+                            Todas as datas
+                        </option>
+
+                        <option value="hoje">
+                            Hoje
+                        </option>
+
+                        <option value="mes">
+                            Este mês
+                        </option>
+
+                        <option value="anterior">
+                            Mês anterior
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================================
+                 TABELA HISTÓRICO
+            =============================================== -->
+
+            <div
+                id="cardTabelaCompras"
+                class="compras-tabela-container"
+            >
+
+                <table class="compras-tabela">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Nº
+                            </th>
+
+                            <th>
+                                Data
+                            </th>
+
+                            <th>
+                                Fornecedor
+                            </th>
+
+                            <th>
+                                Nota Fiscal
+                            </th>
+
+                            <th>
+                                Itens
+                            </th>
+
+                            <th>
+                                Total
+                            </th>
+
+                            <th>
+                                Ações
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="listaCompras">
+
+                        <!--
+                            As compras serão inseridas
+                            pelo compras.js.
+                        -->
+
+                    </tbody>
+
+                </table>
+
+
+                <!-- ESTADO VAZIO -->
+
+                <div
+                    id="estadoVazioCompras"
+                    class="compras-estado-vazio"
+                >
+
+                    <i class="fas fa-cart-shopping"></i>
+
+                    <h3>
+                        Nenhuma compra registrada
+                    </h3>
+
+                    <p>
+                        Quando uma compra for finalizada,
+                        ela aparecerá aqui.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="btnNovaCompraVazio"
+                        class="btn btn-primary"
+                    >
+
+                        <i class="fas fa-plus"></i>
+
+                        Registrar Primeira Compra
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

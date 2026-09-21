@@ -1,0 +1,377 @@
+<!-- =========================================================
+     BEQ EMPREENDIMENTOS
+     MÓDULO: OBRAS
+     ARQUIVO: pages/obras.html
+     ========================================================= -->
+
+<div class="page">
+
+    <!-- CABEÇALHO DA PÁGINA -->
+    <div class="page-header">
+
+        <div>
+            <h1>
+                <i class="fa-solid fa-building"></i>
+                Obras
+            </h1>
+
+            <p>
+                Cadastro e acompanhamento das obras
+            </p>
+        </div>
+
+        <button
+            id="btnNovaObra"
+            class="btn btn-primary"
+            type="button"
+        >
+            <i class="fa-solid fa-plus"></i>
+            Nova Obra
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         FORMULÁRIO DE CADASTRO / EDIÇÃO
+         ===================================================== -->
+
+    <section
+        id="cardFormObra"
+        class="card hidden"
+    >
+
+        <div class="card-header">
+
+            <div>
+                <h2 id="tituloFormObra">
+                    Nova Obra
+                </h2>
+
+                <p>
+                    Informe os dados da obra
+                </p>
+            </div>
+
+        </div>
+
+
+        <form id="formObra">
+
+            <!-- ID OCULTO -->
+            <input
+                type="hidden"
+                id="idObra"
+            >
+
+
+            <!-- PRIMEIRA LINHA -->
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="codigoObra">
+                        Código
+                    </label>
+
+                    <input
+                        type="text"
+                        id="codigoObra"
+                        class="form-control"
+                        placeholder="OBR-00001"
+                        readonly
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="nomeObra">
+                        Nome da Obra *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nomeObra"
+                        class="form-control"
+                        placeholder="Digite o nome da obra"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- SEGUNDA LINHA -->
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="clienteObra">
+                        Cliente *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="clienteObra"
+                        class="form-control"
+                        placeholder="Digite o nome do cliente"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="responsavelObra">
+                        Responsável
+                    </label>
+
+                    <input
+                        type="text"
+                        id="responsavelObra"
+                        class="form-control"
+                        placeholder="Responsável pela obra"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- ENDEREÇO -->
+            <div class="form-group">
+
+                <label for="enderecoObra">
+                    Endereço
+                </label>
+
+                <input
+                    type="text"
+                    id="enderecoObra"
+                    class="form-control"
+                    placeholder="Endereço da obra"
+                >
+
+            </div>
+
+
+            <!-- DATAS E STATUS -->
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="dataInicioObra">
+                        Data de Início
+                    </label>
+
+                    <input
+                        type="date"
+                        id="dataInicioObra"
+                        class="form-control"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="dataFimObra">
+                        Previsão de Término
+                    </label>
+
+                    <input
+                        type="date"
+                        id="dataFimObra"
+                        class="form-control"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="statusObra">
+                        Status
+                    </label>
+
+                    <select
+                        id="statusObra"
+                        class="form-control"
+                    >
+
+                        <option value="planejamento">
+                            Planejamento
+                        </option>
+
+                        <option value="andamento">
+                            Em andamento
+                        </option>
+
+                        <option value="pausada">
+                            Pausada
+                        </option>
+
+                        <option value="concluida">
+                            Concluída
+                        </option>
+
+                        <option value="cancelada">
+                            Cancelada
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- OBSERVAÇÕES -->
+            <div class="form-group">
+
+                <label for="observacoesObra">
+                    Observações
+                </label>
+
+                <textarea
+                    id="observacoesObra"
+                    class="form-control"
+                    rows="4"
+                    placeholder="Informações adicionais sobre a obra"
+                ></textarea>
+
+            </div>
+
+
+            <!-- BOTÕES -->
+            <div class="form-actions">
+
+                <button
+                    id="btnCancelarObra"
+                    class="btn btn-secondary"
+                    type="button"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                    Cancelar
+                </button>
+
+                <button
+                    id="btnSalvarObra"
+                    class="btn btn-primary"
+                    type="submit"
+                >
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    Salvar Obra
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- =====================================================
+         ÁREA DE PESQUISA E CONTROLE
+         ===================================================== -->
+
+    <div class="table-header">
+
+        <input
+            type="search"
+            id="pesquisarObra"
+            class="input"
+            placeholder="Pesquisar obra..."
+            autocomplete="off"
+        >
+
+
+        <button
+            id="btnMostrarObras"
+            class="btn btn-secondary"
+            type="button"
+        >
+            <i class="fa-solid fa-eye-slash"></i>
+            Ocultar Obras
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         TABELA DE OBRAS
+         ===================================================== -->
+
+    <div
+        id="cardTabelaObras"
+        class="card"
+    >
+
+        <div class="table-responsive">
+
+            <table class="table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Código</th>
+
+                        <th>Obra</th>
+
+                        <th>Cliente</th>
+
+                        <th>Responsável</th>
+
+                        <th>Início</th>
+
+                        <th>Previsão</th>
+
+                        <th>Status</th>
+
+                        <th>Ações</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="listaObras">
+
+                    <!--
+                        As obras serão inseridas
+                        pelo JavaScript.
+                    -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- MENSAGEM QUANDO NÃO HOUVER OBRAS -->
+        <div
+            id="estadoVazioObras"
+            class="empty-state"
+        >
+
+            <i class="fa-solid fa-building"></i>
+
+            <h3>
+                Nenhuma obra cadastrada
+            </h3>
+
+            <p>
+                Cadastre a primeira obra para começar.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>

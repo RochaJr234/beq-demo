@@ -1,0 +1,844 @@
+/* ==========================================================
+   BEQ EMPREENDIMENTOS
+   MÓDULO: RELATÓRIOS
+   Arquivo: assets/css/modulos/relatorios.css
+
+   Responsabilidade:
+   - Aparência exclusiva da tela de Relatórios
+   - Indicadores
+   - Opções de relatórios
+   - Sistema visual de abas
+   - Conteúdo dos relatórios
+   - Responsividade
+
+   NÃO controla:
+   - Sidebar
+   - Topbar
+   - Layout global
+   - Botões globais
+========================================================== */
+
+
+/* ==========================================================
+   CONTAINER PRINCIPAL
+========================================================== */
+
+.relatorios {
+    width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   CABEÇALHO
+========================================================== */
+
+.relatorios-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.relatorios-titulo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.relatorios-titulo-icone {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--cor-primaria, #0d6efd);
+    color: #ffffff;
+
+    font-size: 20px;
+}
+
+.relatorios-titulo h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.relatorios-titulo p {
+    margin: 4px 0 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* ==========================================================
+   INDICADORES
+========================================================== */
+
+.relatorios-indicadores {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.relatorio-indicador {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    min-height: 90px;
+    padding: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    box-sizing: border-box;
+}
+
+.relatorio-indicador-icone {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eef4ff;
+    color: var(--cor-primaria, #0d6efd);
+
+    font-size: 18px;
+}
+
+.relatorio-indicador span {
+    display: block;
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.relatorio-indicador strong {
+    display: block;
+    font-size: 24px;
+    line-height: 1;
+    color: #111827;
+}
+
+
+/* ==========================================================
+   CARD DE RELATÓRIOS DISPONÍVEIS
+========================================================== */
+
+.relatorios-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+
+    padding: 24px;
+    margin-bottom: 24px;
+
+    box-sizing: border-box;
+}
+
+.relatorios-card-header {
+    margin-bottom: 20px;
+}
+
+.relatorios-card-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #111827;
+}
+
+.relatorios-card-header p {
+    margin: 5px 0 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* ==========================================================
+   OPÇÕES
+========================================================== */
+
+.relatorios-opcoes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.relatorio-opcao {
+    width: 100%;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    text-align: left;
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+.relatorio-opcao:hover {
+    transform: translateY(-2px);
+    border-color: var(--cor-primaria, #0d6efd);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+}
+
+.relatorio-opcao:active {
+    transform: translateY(0);
+}
+
+.relatorio-opcao-icone {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eef4ff;
+    color: var(--cor-primaria, #0d6efd);
+
+    font-size: 17px;
+}
+
+.relatorio-opcao-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.relatorio-opcao-info h3 {
+    margin: 0 0 4px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.relatorio-opcao-info p {
+    margin: 0;
+
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.relatorio-opcao-seta {
+    color: #9ca3af;
+    font-size: 14px;
+    flex-shrink: 0;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.relatorio-opcao:hover .relatorio-opcao-seta {
+    color: var(--cor-primaria, #0d6efd);
+    transform: translateX(3px);
+}
+
+
+/* ==========================================================
+   ÁREA PRINCIPAL DAS ABAS
+========================================================== */
+
+.relatorios-abas {
+    width: 100%;
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+
+    margin-bottom: 24px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   BARRA DAS ABAS
+========================================================== */
+
+.relatorios-abas-barra {
+    width: 100%;
+
+    background: #f8fafc;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: thin;
+}
+
+.relatorios-abas-lista {
+    min-height: 58px;
+
+    display: flex;
+    align-items: flex-end;
+
+    gap: 4px;
+
+    padding: 8px 12px 0;
+
+    box-sizing: border-box;
+
+    white-space: nowrap;
+}
+
+
+/* ==========================================================
+   ABA INDIVIDUAL
+
+   Os elementos serão criados pelo JavaScript.
+========================================================== */
+
+.relatorio-aba {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    min-height: 50px;
+
+    padding: 0 16px;
+
+    border: 1px solid transparent;
+    border-bottom: none;
+
+    border-radius: 10px 10px 0 0;
+
+    background: transparent;
+
+    color: #6b7280;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.relatorio-aba:hover {
+    background: #eef4ff;
+    color: var(--cor-primaria, #0d6efd);
+}
+
+.relatorio-aba.ativa {
+    background: #ffffff;
+
+    border-color: #e5e7eb;
+
+    color: var(--cor-primaria, #0d6efd);
+
+    margin-bottom: -1px;
+}
+
+.relatorio-aba-icone {
+    font-size: 14px;
+}
+
+.relatorio-aba-fechar {
+    width: 24px;
+    height: 24px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: transparent;
+    color: #9ca3af;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.relatorio-aba-fechar:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+
+/* ==========================================================
+   CONTEÚDO DAS ABAS
+========================================================== */
+
+.relatorios-abas-conteudo {
+    width: 100%;
+    min-height: 300px;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   PAINEL INTERNO DE CADA RELATÓRIO
+
+   Criado pelo JavaScript.
+========================================================== */
+
+.relatorio-painel {
+    width: 100%;
+    padding: 24px;
+
+    box-sizing: border-box;
+}
+
+.relatorio-painel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+}
+
+.relatorio-painel-titulo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.relatorio-painel-titulo-icone {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eef4ff;
+    color: var(--cor-primaria, #0d6efd);
+
+    font-size: 17px;
+}
+
+.relatorio-painel-titulo h2 {
+    margin: 0;
+
+    font-size: 20px;
+    color: #111827;
+}
+
+.relatorio-painel-titulo p {
+    margin: 4px 0 0;
+
+    color: #6b7280;
+    font-size: 13px;
+}
+
+
+/* ==========================================================
+   AÇÕES DO RELATÓRIO
+========================================================== */
+
+.relatorio-painel-acoes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+
+/* ==========================================================
+   FILTROS
+========================================================== */
+
+.relatorio-filtros {
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, 2fr)
+        minmax(150px, 1fr)
+        minmax(150px, 1fr)
+        minmax(150px, 1fr);
+
+    gap: 14px;
+
+    padding: 18px;
+
+    margin-bottom: 20px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    box-sizing: border-box;
+}
+
+.relatorio-filtro {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.relatorio-filtro label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.relatorio-filtro input,
+.relatorio-filtro select {
+    width: 100%;
+    height: 40px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    padding: 0 12px;
+
+    background: #ffffff;
+    color: #111827;
+
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+.relatorio-filtro input:focus,
+.relatorio-filtro select:focus {
+    border-color: var(--cor-primaria, #0d6efd);
+
+    box-shadow:
+        0 0 0 3px rgba(13, 110, 253, 0.10);
+}
+
+
+/* ==========================================================
+   TABELA
+========================================================== */
+
+.relatorio-tabela-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    box-sizing: border-box;
+}
+
+.relatorio-tabela {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 650px;
+}
+
+.relatorio-tabela th {
+    padding: 13px 14px;
+
+    background: #f8fafc;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    color: #374151;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+.relatorio-tabela td {
+    padding: 13px 14px;
+
+    border-bottom: 1px solid #f1f5f9;
+
+    color: #4b5563;
+
+    font-size: 13px;
+
+    vertical-align: middle;
+}
+
+.relatorio-tabela tbody tr:hover {
+    background: #f8fafc;
+}
+
+.relatorio-tabela tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ==========================================================
+   ESTADO VAZIO
+========================================================== */
+
+.relatorio-estado-vazio {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color: #6b7280;
+}
+
+.relatorio-estado-vazio i {
+    font-size: 34px;
+
+    color: #cbd5e1;
+
+    margin-bottom: 12px;
+}
+
+.relatorio-estado-vazio h3 {
+    margin: 0 0 6px;
+
+    color: #374151;
+
+    font-size: 16px;
+}
+
+.relatorio-estado-vazio p {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.relatorio-status {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.relatorio-status-ativo {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.relatorio-status-inativo {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.relatorio-status-pendente {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+
+/* ==========================================================
+   RODAPÉ
+========================================================== */
+
+.relatorios-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 4px 2px;
+
+    color: #9ca3af;
+
+    font-size: 12px;
+}
+
+
+/* ==========================================================
+   ANIMAÇÃO DE ABERTURA DA ABA
+========================================================== */
+
+@keyframes abrirRelatorioAba {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.relatorio-painel.animar {
+    animation: abrirRelatorioAba 0.2s ease-out;
+}
+
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media (max-width: 1100px) {
+
+    .relatorios-indicadores {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .relatorios-opcoes {
+        grid-template-columns: 1fr;
+    }
+
+    .relatorio-filtros {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .relatorios {
+        padding: 18px;
+    }
+
+    .relatorios-header {
+        margin-bottom: 18px;
+    }
+
+    .relatorios-titulo h1 {
+        font-size: 24px;
+    }
+
+    .relatorios-card {
+        padding: 18px;
+    }
+
+    .relatorio-painel {
+        padding: 18px;
+    }
+
+    .relatorio-painel-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .relatorio-painel-acoes {
+        width: 100%;
+    }
+
+}
+
+
+/* ==========================================================
+   CELULAR
+========================================================== */
+
+@media (max-width: 520px) {
+
+    .relatorios {
+        padding: 14px;
+    }
+
+    .relatorios-indicadores {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .relatorios-opcoes {
+        gap: 10px;
+    }
+
+    .relatorio-opcao {
+        padding: 13px;
+    }
+
+    .relatorios-card {
+        padding: 14px;
+    }
+
+    .relatorios-abas-lista {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .relatorio-aba {
+        padding: 0 12px;
+        font-size: 13px;
+    }
+
+    .relatorio-painel {
+        padding: 14px;
+    }
+
+    .relatorio-filtros {
+        grid-template-columns: 1fr;
+        padding: 14px;
+    }
+
+    .relatorio-painel-acoes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .relatorio-painel-acoes .btn {
+        width: 100%;
+    }
+
+    .relatorios-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+}

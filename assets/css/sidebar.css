@@ -1,0 +1,197 @@
+/* ===========================================================
+   BEQ EMPREENDIMENTOS
+   Arquivo: sidebar.css
+   Descrição: Barra lateral do sistema.
+   Autor: Rocha Digital
+   Versão: 2.0
+=========================================================== */
+
+
+/* ===========================================================
+   SIDEBAR
+=========================================================== */
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:var(--sidebar-width);
+
+    height:100vh;
+
+    background:var(--bg-sidebar);
+
+    color:var(--text-white);
+
+    display:flex;
+
+    flex-direction:column;
+
+    box-shadow:var(--shadow-sidebar);
+
+    z-index:1000;
+
+}
+
+
+/* ===========================================================
+   LOGO
+=========================================================== */
+
+.sidebar-logo{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:24px 18px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.sidebar-logo img{
+
+    width:160px;
+
+    height:auto;
+
+    display:block;
+
+    object-fit:contain;
+
+    transition:.3s;
+
+}
+
+/* ===========================================================
+   MENU
+=========================================================== */
+
+.sidebar-menu{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:var(--space-20) var(--space-16);
+
+}
+
+
+/* ===========================================================
+   ITEM
+=========================================================== */
+
+.sidebar-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    height:var(--height-sidebar-item);
+
+    padding:0 var(--space-16);
+
+    margin-bottom:var(--space-8);
+
+    border-radius:var(--radius-md);
+
+    color:rgba(255,255,255,.85);
+
+    transition:var(--transition-normal);
+
+}
+
+
+/* ===========================================================
+   ÍCONES
+=========================================================== */
+
+.sidebar-item i{
+
+    width:22px;
+
+    font-size:18px;
+
+    text-align:center;
+
+}
+
+
+/* ===========================================================
+   TEXTO
+=========================================================== */
+
+.sidebar-item span{
+
+    font-size:var(--font-sm);
+
+    font-weight:var(--font-medium);
+
+}
+
+
+/* ===========================================================
+   HOVER
+=========================================================== */
+
+.sidebar-item:hover{
+
+    background:var(--bg-sidebar-hover);
+
+    color:var(--text-white);
+
+}
+
+
+/* ===========================================================
+   ITEM ATIVO
+=========================================================== */
+
+.sidebar-item.active{
+
+    background:var(--bg-sidebar-active);
+
+    color:var(--text-white);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+
+/* ===========================================================
+   RODAPÉ
+=========================================================== */
+
+.sidebar-footer{
+
+    padding:var(--space-20);
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+/* =========================================================
+   ROLAGEM DA SIDEBAR — OCULTAR BARRA VISUAL
+   ========================================================= */
+
+.sidebar-menu {
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.sidebar-menu::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}

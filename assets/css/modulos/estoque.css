@@ -1,0 +1,2098 @@
+/* ==========================================================
+   BEQ EMPREENDIMENTOS
+   MÓDULO: ESTOQUE
+   ARQUIVO: assets/css/modulos/estoque.css
+
+   Responsabilidade:
+   - Visual do Estoque
+   - Estoque Geral
+   - Indicadores
+   - Distribuição
+   - Romaneio
+   - Movimentações
+   - Responsividade
+
+   Criação / Design: Rocha Digital
+========================================================== */
+
+
+/* ==========================================================
+   CONTAINER PRINCIPAL
+========================================================== */
+
+.estoque {
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   CABEÇALHO
+========================================================== */
+
+.estoque-header {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    margin-bottom: 28px;
+}
+
+
+.estoque-titulo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 28px;
+
+    font-weight: 700;
+}
+
+
+.estoque-titulo-icone {
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: var(--primary-color);
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    flex-shrink: 0;
+}
+
+
+.estoque-subtitulo {
+
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* ==========================================================
+   INDICADORES
+========================================================== */
+
+.estoque-indicadores {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+
+    width: 100%;
+
+    margin-bottom: 24px;
+}
+
+
+.estoque-indicador {
+
+    min-width: 0;
+
+    padding: 20px;
+
+    background: var(--bg-card);
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: 14px;
+
+    box-shadow:
+        var(--shadow-sm);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.estoque-indicador:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        var(--shadow-md);
+}
+
+
+.estoque-indicador-topo {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+}
+
+
+.estoque-indicador-icone {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        rgba(37, 99, 235, .10);
+
+    color:
+        var(--primary-color);
+
+    font-size: 18px;
+}
+
+
+.estoque-indicador-label {
+
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.estoque-indicador-valor {
+
+    display: block;
+
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 26px;
+
+    line-height: 1.1;
+
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   CARDS GERAIS
+========================================================== */
+
+.estoque-card,
+.estoque-distribuicao-card,
+.estoque-movimentacoes-card {
+
+    width: 100%;
+
+    background: var(--bg-card);
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: 14px;
+
+    box-shadow:
+        var(--shadow-sm);
+
+    box-sizing: border-box;
+
+    margin-bottom: 24px;
+
+    overflow: hidden;
+}
+
+
+/* ==========================================================
+   CABEÇALHO DOS CARDS
+========================================================== */
+
+.estoque-card-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding: 20px 22px;
+
+    border-bottom:
+        1px solid var(--border-color);
+}
+
+
+.estoque-card-titulo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+.estoque-card-titulo i {
+
+    color:
+        var(--primary-color);
+
+    font-size: 17px;
+}
+
+
+.estoque-card-subtitulo {
+
+    margin: 5px 0 0;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+
+/* ==========================================================
+   FILTROS DO ESTOQUE GERAL
+========================================================== */
+
+.estoque-filtros {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 18px 22px;
+
+    border-bottom:
+        1px solid var(--border-color);
+
+    background:
+        var(--bg-card);
+}
+
+
+.estoque-filtros .input-icon {
+
+    flex: 1;
+
+    min-width: 240px;
+
+    max-width: 600px;
+
+    position: relative;
+}
+
+
+.estoque-filtros .input-icon input {
+
+    width: 100%;
+
+    height: 44px;
+
+    box-sizing: border-box;
+}
+
+
+.estoque-filtros select {
+
+    width: 220px;
+
+    height: 44px;
+
+    flex-shrink: 0;
+}
+
+
+.estoque-filtros #btnMostrarEstoque {
+
+    min-width: 180px;
+
+    height: 44px;
+
+    flex-shrink: 0;
+}
+
+
+/* ==========================================================
+   TABELA ESTOQUE
+========================================================== */
+
+#cardTabelaEstoque {
+
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+#cardTabelaEstoque table {
+
+    width: 100%;
+
+    min-width: 720px;
+
+    border-collapse: collapse;
+}
+
+
+#cardTabelaEstoque th {
+
+    padding: 13px 16px;
+
+    background:
+        var(--bg-secondary);
+
+    color:
+        var(--text-secondary);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    border-bottom:
+        1px solid var(--border-color);
+}
+
+
+#cardTabelaEstoque td {
+
+    padding: 14px 16px;
+
+    color:
+        var(--text-primary);
+
+    font-size: 13px;
+
+    border-bottom:
+        1px solid var(--border-color);
+
+    vertical-align: middle;
+}
+
+
+#cardTabelaEstoque tbody tr:last-child td {
+
+    border-bottom: none;
+}
+
+
+#cardTabelaEstoque tbody tr {
+
+    transition:
+        background .2s ease;
+}
+
+
+#cardTabelaEstoque tbody tr:hover {
+
+    background:
+        rgba(37, 99, 235, .035);
+}
+
+
+/* ==========================================================
+   ESTADOS DE ESTOQUE
+========================================================== */
+
+.status-estoque {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+.status-success {
+
+    background:
+        rgba(22, 163, 74, .10);
+
+    color:
+        #15803d;
+}
+
+
+.status-warning {
+
+    background:
+        rgba(245, 158, 11, .12);
+
+    color:
+        #b45309;
+}
+
+
+.status-danger {
+
+    background:
+        rgba(220, 38, 38, .10);
+
+    color:
+        #b91c1c;
+}
+
+
+/* ==========================================================
+   ESTADO VAZIO
+========================================================== */
+
+#estadoVazioEstoque {
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color:
+        var(--text-secondary);
+}
+
+
+/* ==========================================================
+   DISTRIBUIÇÃO / ROMANEIO
+========================================================== */
+
+.estoque-distribuicao-card {
+
+    overflow: visible;
+}
+
+
+.estoque-distribuicao-header {
+
+    padding: 20px 22px;
+
+    border-bottom:
+        1px solid var(--border-color);
+}
+
+
+.estoque-distribuicao-header h2 {
+
+    margin: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color:
+        var(--text-primary);
+
+    font-size: 18px;
+}
+
+
+.estoque-distribuicao-header h2 i {
+
+    color:
+        var(--primary-color);
+}
+
+
+.estoque-distribuicao-header p {
+
+    margin: 6px 0 0;
+
+    color:
+        var(--text-secondary);
+
+    font-size: 13px;
+}
+
+
+/* ==========================================================
+   FORMULÁRIO
+========================================================== */
+
+#formDistribuicaoEstoque {
+
+    width: 100%;
+
+    padding: 22px;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   TÍTULOS DAS SEÇÕES
+========================================================== */
+
+.estoque-form-secao {
+
+    margin-bottom: 22px;
+
+    padding-bottom: 20px;
+
+    border-bottom:
+        1px solid var(--border-color);
+}
+
+
+.estoque-form-secao:last-of-type {
+
+    border-bottom: none;
+
+    padding-bottom: 0;
+}
+
+
+.estoque-form-secao-titulo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 16px;
+
+    color:
+        var(--text-primary);
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.estoque-form-secao-titulo i {
+
+    color:
+        var(--primary-color);
+}
+
+
+/* ==========================================================
+   GRID DOS DADOS DA DISTRIBUIÇÃO
+========================================================== */
+
+.estoque-dados-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 16px;
+
+    width: 100%;
+}
+
+
+/* ==========================================================
+   GRUPO DE FORMULÁRIO
+========================================================== */
+
+#formDistribuicaoEstoque .form-group {
+
+    min-width: 0;
+
+    margin-bottom: 0;
+}
+
+
+#formDistribuicaoEstoque .form-label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        var(--text-primary);
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+#formDistribuicaoEstoque .form-control {
+
+    width: 100%;
+
+    min-width: 0;
+
+    height: 44px;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   ÁREA DE ADICIONAR MATERIAL
+========================================================== */
+
+.estoque-material-adicionar {
+
+    display: grid;
+
+    grid-template-columns:
+        2.5fr
+        1fr
+        .8fr
+        auto;
+
+    align-items: end;
+
+    gap: 12px;
+
+    width: 100%;
+
+    margin-bottom: 14px;
+}
+
+
+.estoque-material-adicionar .form-group {
+
+    min-width: 0;
+}
+
+
+#btnAdicionarMaterialDistribuicao {
+
+    height: 44px;
+
+    min-width: 170px;
+
+    white-space: nowrap;
+}
+
+
+/* ==========================================================
+   ESTOQUE DISPONÍVEL
+========================================================== */
+
+#estoqueDisponivelDistribuicao {
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 38px;
+
+    margin-top: 8px;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(37, 99, 235, .07);
+
+    color:
+        var(--primary-color);
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* ==========================================================
+   OBSERVAÇÃO DO MATERIAL
+========================================================== */
+
+#observacaoMaterialDistribuicaoEstoque {
+
+    min-height: 80px;
+
+    height: auto;
+
+    resize: vertical;
+
+    padding-top: 12px;
+}
+
+
+/* ==========================================================
+   TABELA DE MATERIAIS DO ROMANEIO
+========================================================== */
+
+#cardMateriaisDistribuicao {
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    background:
+        var(--bg-card);
+}
+
+
+#cardMateriaisDistribuicao table {
+
+    width: 100%;
+
+    min-width: 700px;
+
+    border-collapse: collapse;
+}
+
+
+#cardMateriaisDistribuicao th {
+
+    padding: 12px 14px;
+
+    background:
+        var(--bg-secondary);
+
+    color:
+        var(--text-secondary);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    border-bottom:
+        1px solid var(--border-color);
+}
+
+
+#cardMateriaisDistribuicao td {
+
+    padding: 12px 14px;
+
+    color:
+        var(--text-primary);
+
+    font-size: 12px;
+
+    border-bottom:
+        1px solid var(--border-color);
+
+    vertical-align: middle;
+}
+
+
+#cardMateriaisDistribuicao tbody tr:last-child td {
+
+    border-bottom: none;
+}
+
+
+#cardMateriaisDistribuicao tbody tr:hover {
+
+    background:
+        rgba(37, 99, 235, .035);
+}
+
+
+/* ==========================================================
+   TOTAL DO ROMANEIO
+========================================================== */
+
+.estoque-romaneio-total {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    padding: 14px 16px;
+
+    border-top:
+        1px solid var(--border-color);
+
+    background:
+        var(--bg-secondary);
+
+    color:
+        var(--text-secondary);
+
+    font-size: 12px;
+}
+
+
+#totalMateriaisDistribuicao {
+
+    color:
+        var(--text-primary);
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   ESTADO VAZIO DOS MATERIAIS
+========================================================== */
+
+#estadoVazioMateriaisDistribuicao {
+
+    padding: 28px 20px;
+
+    text-align: center;
+
+    color:
+        var(--text-secondary);
+
+    font-size: 13px;
+}
+
+
+/* ==========================================================
+   OBSERVAÇÃO GERAL
+========================================================== */
+
+.estoque-observacao-geral {
+
+    margin-top: 22px;
+}
+
+
+.estoque-observacao-geral textarea {
+
+    width: 100%;
+
+    min-height: 90px;
+
+    resize: vertical;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   AÇÕES DO ROMANEIO
+========================================================== */
+
+.estoque-distribuicao-acoes {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 24px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid var(--border-color);
+}
+
+
+#btnLimparDistribuicaoEstoque {
+
+    min-width: 130px;
+
+    height: 44px;
+}
+
+
+#btnDistribuirMaterialEstoque {
+
+    min-width: 220px;
+
+    height: 44px;
+}
+
+
+/* ==========================================================
+   MOVIMENTAÇÕES
+========================================================== */
+
+.estoque-movimentacoes-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 20px 22px;
+
+    border-bottom:
+        1px solid var(--border-color);
+}
+
+
+.estoque-movimentacoes-pesquisa {
+
+    width: 100%;
+
+    max-width: 400px;
+}
+
+
+.estoque-movimentacoes-pesquisa input {
+
+    width: 100%;
+
+    height: 42px;
+
+    box-sizing: border-box;
+}
+
+
+#listaMovimentacoesEstoque {
+
+    width: 100%;
+}
+
+
+.estoque-movimentacoes-tabela {
+
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+.estoque-movimentacoes-tabela table {
+
+    width: 100%;
+
+    min-width: 800px;
+
+    border-collapse: collapse;
+}
+
+
+.estoque-movimentacoes-tabela th {
+
+    padding: 13px 16px;
+
+    background:
+        var(--bg-secondary);
+
+    color:
+        var(--text-secondary);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    border-bottom:
+        1px solid var(--border-color);
+}
+
+
+.estoque-movimentacoes-tabela td {
+
+    padding: 13px 16px;
+
+    color:
+        var(--text-primary);
+
+    font-size: 12px;
+
+    border-bottom:
+        1px solid var(--border-color);
+
+    vertical-align: middle;
+}
+
+
+.estoque-movimentacoes-tabela tbody tr:last-child td {
+
+    border-bottom: none;
+}
+
+
+/* ==========================================================
+   ESTADO VAZIO MOVIMENTAÇÕES
+========================================================== */
+
+#estadoVazioMovimentacoesEstoque {
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color:
+        var(--text-secondary);
+}
+
+
+/* ==========================================================
+   BOTÃO REMOVER MATERIAL
+========================================================== */
+
+#cardMateriaisDistribuicao
+[data-remover-material] {
+
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border-radius: 8px;
+}
+
+
+/* ==========================================================
+   BOTÕES PEQUENOS
+========================================================== */
+
+#cardTabelaEstoque .btn-sm {
+
+    white-space: nowrap;
+}
+
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media (max-width: 1200px) {
+
+    .estoque-indicadores {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .estoque-dados-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .estoque-material-adicionar {
+
+        grid-template-columns:
+            2fr
+            1fr
+            .8fr
+            auto;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .estoque-filtros {
+
+        flex-wrap: wrap;
+    }
+
+
+    .estoque-filtros .input-icon {
+
+        max-width: none;
+
+        flex-basis: 100%;
+    }
+
+
+    .estoque-filtros select {
+
+        flex: 1;
+
+        width: auto;
+    }
+
+
+    .estoque-filtros #btnMostrarEstoque {
+
+        flex: 0 0 auto;
+    }
+
+
+    .estoque-material-adicionar {
+
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+
+    #btnAdicionarMaterialDistribuicao {
+
+        width: 100%;
+    }
+
+
+    .estoque-movimentacoes-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .estoque-movimentacoes-pesquisa {
+
+        max-width: none;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .estoque-header {
+
+        margin-bottom: 20px;
+    }
+
+
+    .estoque-titulo {
+
+        font-size: 23px;
+    }
+
+
+    .estoque-titulo-icone {
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+
+
+    .estoque-indicadores {
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .estoque-indicador {
+
+        padding: 17px;
+    }
+
+
+    .estoque-card-header,
+    .estoque-distribuicao-header,
+    .estoque-movimentacoes-header {
+
+        padding: 17px;
+    }
+
+
+    .estoque-filtros {
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .estoque-filtros .input-icon,
+    .estoque-filtros select,
+    .estoque-filtros #btnMostrarEstoque {
+
+        width: 100%;
+
+        max-width: none;
+
+        min-width: 0;
+    }
+
+
+    #formDistribuicaoEstoque {
+
+        padding: 17px;
+    }
+
+
+    .estoque-dados-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .estoque-material-adicionar {
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .estoque-distribuicao-acoes {
+
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+
+    #btnLimparDistribuicaoEstoque,
+    #btnDistribuirMaterialEstoque {
+
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    #cardMateriaisDistribuicao {
+
+        overflow-x: auto;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .estoque-titulo {
+
+        font-size: 21px;
+    }
+
+
+    .estoque-subtitulo {
+
+        font-size: 12px;
+    }
+
+
+    .estoque-indicador-valor {
+
+        font-size: 23px;
+    }
+
+
+    .estoque-card-titulo {
+
+        font-size: 15px;
+    }
+
+
+    .estoque-card-subtitulo {
+
+        font-size: 11px;
+    }
+}
+/* ==========================================================
+   CORREÇÃO FINAL DO LAYOUT DO ROMANEIO
+   Rocha Digital
+   ========================================================== */
+
+/* Mantém o formulário do Romaneio em largura total */
+.estoque-distribuicao-card #formDistribuicaoEstoque,
+.estoque-distribuicao-card .estoque-distribuicao-form {
+    width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
+}
+
+/* Caixa interna do formulário */
+.estoque-distribuicao-card .estoque-distribuicao-box {
+    width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
+}
+
+/* ==========================================================
+   DADOS DA DISTRIBUIÇÃO
+   Desktop: Obra | Data | Motorista | Veículo | Placa
+   ========================================================== */
+
+.estoque-distribuicao-card .estoque-dados-grid {
+    display: grid !important;
+    grid-template-columns: minmax(260px, 2fr) repeat(3, minmax(150px, 1fr)) !important;
+    align-items: end !important;
+    gap: 16px !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.estoque-distribuicao-card .estoque-dados-grid > .form-group {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+}
+
+.estoque-distribuicao-card .estoque-dados-grid .form-control,
+.estoque-distribuicao-card .estoque-dados-grid select,
+.estoque-distribuicao-card .estoque-dados-grid input {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 44px !important;
+    box-sizing: border-box !important;
+}
+
+/* Quando a estrutura possuir 5 campos, distribui todos na mesma linha */
+.estoque-distribuicao-card .estoque-dados-grid > .form-group:nth-child(5) {
+    grid-column: auto !important;
+}
+
+/* ==========================================================
+   COMPATIBILIDADE COM A ESTRUTURA ANTERIOR
+   ========================================================== */
+
+.estoque-distribuicao-card .estoque-distribuicao-box > .form-group:not(.estoque-observacao) {
+    box-sizing: border-box;
+}
+
+/* ==========================================================
+   MATERIAIS PARA DISTRIBUIÇÃO
+   Produto | Quantidade | Unidade | Adicionar
+   ========================================================== */
+
+.estoque-distribuicao-card .estoque-material-adicionar {
+    display: grid !important;
+    grid-template-columns: minmax(280px, 2.6fr) minmax(120px, 1fr) minmax(110px, .8fr) auto !important;
+    align-items: end !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin: 0 0 14px !important;
+}
+
+.estoque-distribuicao-card .estoque-material-adicionar > .form-group {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+}
+
+.estoque-distribuicao-card .estoque-material-adicionar select,
+.estoque-distribuicao-card .estoque-material-adicionar input {
+    width: 100% !important;
+    height: 44px !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.estoque-distribuicao-card #btnAdicionarMaterialDistribuicao {
+    width: auto !important;
+    min-width: 170px !important;
+    height: 44px !important;
+    white-space: nowrap !important;
+}
+
+/* ==========================================================
+   CAMPOS DE TRANSPORTE DO ROMANEIO
+   Caso estejam fora do grid principal
+   ========================================================== */
+
+.estoque-distribuicao-card #motoristaDistribuicaoEstoque,
+.estoque-distribuicao-card #veiculoDistribuicaoEstoque,
+.estoque-distribuicao-card #placaDistribuicaoEstoque {
+    width: 100% !important;
+    height: 44px !important;
+    box-sizing: border-box !important;
+}
+
+/* ==========================================================
+   OBSERVAÇÃO
+   ========================================================== */
+
+.estoque-distribuicao-card #observacaoDistribuicaoEstoque,
+.estoque-distribuicao-card #observacaoMaterialDistribuicaoEstoque {
+    width: 100% !important;
+    min-height: 90px !important;
+    box-sizing: border-box !important;
+    resize: vertical;
+}
+
+/* ==========================================================
+   AÇÕES
+   ========================================================== */
+
+.estoque-distribuicao-card .estoque-distribuicao-acoes {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+}
+
+/* ==========================================================
+   RESPONSIVO
+   ========================================================== */
+
+@media (max-width: 1200px) {
+    .estoque-distribuicao-card .estoque-dados-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .estoque-distribuicao-card .estoque-material-adicionar {
+        grid-template-columns: minmax(220px, 2fr) minmax(120px, 1fr) minmax(100px, .8fr) auto !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .estoque-distribuicao-card .estoque-dados-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .estoque-distribuicao-card .estoque-material-adicionar {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .estoque-distribuicao-card #btnAdicionarMaterialDistribuicao {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .estoque-distribuicao-card .estoque-dados-grid,
+    .estoque-distribuicao-card .estoque-material-adicionar {
+        grid-template-columns: 1fr !important;
+    }
+
+    .estoque-distribuicao-card .estoque-distribuicao-acoes {
+        flex-direction: column-reverse !important;
+        align-items: stretch !important;
+    }
+
+    .estoque-distribuicao-card .estoque-distribuicao-acoes button {
+        width: 100% !important;
+    }
+}
+
+
+/* ==========================================================
+   ESTOQUE — MODAL DE DISTRIBUIÇÃO DE MATERIAIS
+   Modelo aprovado
+   Criação / Design: Rocha Digital
+   ========================================================== */
+
+/* Botões do cabeçalho do Estoque Geral */
+.estoque-card-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#btnAbrirDistribuicaoEstoque {
+    height: 44px;
+    min-width: 185px;
+}
+
+/* ==========================================================
+   CAMADA DO MODAL
+   ========================================================== */
+
+.modal-distribuicao-estoque {
+    position: fixed;
+    inset: 0;
+    z-index: 99990;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.modal-distribuicao-estoque[hidden] {
+    display: none !important;
+}
+
+.modal-distribuicao-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 27, 48, .64);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+/* ==========================================================
+   JANELA
+   ========================================================== */
+
+.modal-distribuicao-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(830px, 100%);
+    max-height: calc(100vh - 48px);
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, .08);
+    border-radius: 16px;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, .28);
+    overflow: hidden;
+    animation: modalDistribuicaoEntrada .22s ease-out;
+}
+
+@keyframes modalDistribuicaoEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ==========================================================
+   CABEÇALHO
+   ========================================================== */
+
+.modal-distribuicao-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px 28px 22px;
+    border-bottom: 1px solid #e7ebf2;
+    background: #ffffff;
+    flex-shrink: 0;
+}
+
+.modal-distribuicao-titulo {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    min-width: 0;
+}
+
+.modal-distribuicao-icone {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 40px;
+    border-radius: 10px;
+    background: rgba(37, 99, 235, .10);
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+.modal-distribuicao-titulo h2 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.modal-distribuicao-titulo p {
+    margin: 6px 0 0;
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.modal-distribuicao-fechar {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 36px;
+    padding: 0;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: #64748b;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+}
+
+.modal-distribuicao-fechar:hover {
+    background: #f1f5f9;
+    color: var(--text-primary);
+}
+
+/* ==========================================================
+   CORPO COM ROLAGEM
+   ========================================================== */
+
+.modal-distribuicao-dialog > form {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-distribuicao-corpo {
+    min-height: 0;
+    overflow-y: auto;
+    padding: 20px 28px 4px;
+}
+
+/* ==========================================================
+   SEÇÕES
+   ========================================================== */
+
+.modal-distribuicao-secao {
+    padding: 0 0 20px;
+    margin: 0 0 20px;
+    border-bottom: 1px solid #e7ebf2;
+}
+
+.modal-distribuicao-secao:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.modal-distribuicao-secao-titulo {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.modal-distribuicao-secao-icone {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 25px;
+    color: var(--primary-color);
+    font-size: 15px;
+}
+
+.modal-distribuicao-secao-titulo h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.modal-distribuicao-secao-titulo p {
+    margin: 4px 0 0;
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* ==========================================================
+   DADOS DA DISTRIBUIÇÃO
+   ========================================================== */
+
+.modal-distribuicao-dados-grid {
+    display: grid;
+    grid-template-columns: 1.5fr .8fr 1fr 1.2fr .9fr;
+    gap: 14px;
+    width: 100%;
+}
+
+.modal-distribuicao-dados-grid .campo-obra {
+    grid-column: span 2;
+}
+
+.modal-distribuicao-dados-grid .campo-data {
+    grid-column: span 1;
+}
+
+.modal-distribuicao-dados-grid .form-group {
+    min-width: 0;
+    margin: 0;
+}
+
+.modal-distribuicao-dados-grid .form-group:nth-child(3) {
+    grid-column: span 1;
+}
+
+.modal-distribuicao-dados-grid .form-group:nth-child(4) {
+    grid-column: span 1;
+}
+
+.modal-distribuicao-dados-grid .form-group:nth-child(5) {
+    grid-column: span 1;
+}
+
+/* ==========================================================
+   MATERIAIS
+   ========================================================== */
+
+.modal-distribuicao-material-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2.5fr) minmax(110px, .8fr) minmax(100px, .8fr) 190px;
+    gap: 12px;
+    align-items: end;
+    width: 100%;
+}
+
+.modal-distribuicao-material-grid .form-group {
+    min-width: 0;
+    margin: 0;
+}
+
+.modal-distribuicao-material-botao {
+    min-width: 0;
+}
+
+.modal-distribuicao-material-botao button {
+    width: 100%;
+    height: 44px;
+    white-space: nowrap;
+}
+
+.modal-distribuicao-estoque-info {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background: rgba(37, 99, 235, .07);
+    color: var(--primary-color);
+    font-size: 11px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+/* ==========================================================
+   CAMPOS
+   ========================================================== */
+
+.modal-distribuicao-dialog label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.modal-distribuicao-dialog input,
+.modal-distribuicao-dialog select,
+.modal-distribuicao-dialog textarea {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    border: 1px solid #dbe3ee;
+    border-radius: 9px;
+    background: #ffffff;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.modal-distribuicao-dialog input,
+.modal-distribuicao-dialog select {
+    height: 44px;
+    padding: 0 12px;
+}
+
+.modal-distribuicao-dialog textarea {
+    min-height: 76px;
+    padding: 11px 12px;
+    resize: vertical;
+}
+
+.modal-distribuicao-dialog input::placeholder,
+.modal-distribuicao-dialog textarea::placeholder {
+    color: #94a3b8;
+}
+
+.modal-distribuicao-dialog input:focus,
+.modal-distribuicao-dialog select:focus,
+.modal-distribuicao-dialog textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .10);
+}
+
+/* ==========================================================
+   LISTA DE MATERIAIS
+   ========================================================== */
+
+.modal-distribuicao-materiais-lista {
+    width: 100%;
+    margin-top: 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.modal-distribuicao-materiais-lista[hidden] {
+    display: none !important;
+}
+
+.modal-distribuicao-materiais-lista table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.modal-distribuicao-materiais-lista th {
+    padding: 10px 12px;
+    background: #f8fafc;
+    color: #64748b;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.modal-distribuicao-materiais-lista td {
+    padding: 10px 12px;
+    color: var(--text-primary);
+    border-bottom: 1px solid #edf1f6;
+    font-size: 12px;
+}
+
+.modal-distribuicao-materiais-lista tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.modal-distribuicao-vazio {
+    margin-top: 10px;
+    padding: 14px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.modal-distribuicao-vazio[hidden] {
+    display: none !important;
+}
+
+/* ==========================================================
+   OBSERVAÇÃO
+   ========================================================== */
+
+.modal-distribuicao-observacao textarea {
+    min-height: 78px;
+}
+
+/* ==========================================================
+   RODAPÉ
+   ========================================================== */
+
+.modal-distribuicao-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 17px 28px;
+    border-top: 1px solid #e7ebf2;
+    background: #ffffff;
+    flex-shrink: 0;
+}
+
+.modal-distribuicao-footer button {
+    height: 44px;
+}
+
+.modal-distribuicao-footer #btnLimparDistribuicaoEstoque {
+    min-width: 110px;
+}
+
+.modal-distribuicao-footer #btnDistribuirMaterialEstoque {
+    min-width: 245px;
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+    .modal-distribuicao-dialog {
+        width: min(760px, 100%);
+    }
+
+    .modal-distribuicao-dados-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .modal-distribuicao-dados-grid .campo-obra {
+        grid-column: span 1;
+    }
+
+    .modal-distribuicao-material-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .modal-distribuicao-material-botao {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .modal-distribuicao-estoque {
+        padding: 10px;
+    }
+
+    .modal-distribuicao-dialog {
+        max-height: calc(100vh - 20px);
+        border-radius: 13px;
+    }
+
+    .modal-distribuicao-header {
+        padding: 18px;
+    }
+
+    .modal-distribuicao-corpo {
+        padding: 17px 18px 2px;
+    }
+
+    .modal-distribuicao-footer {
+        padding: 14px 18px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .modal-distribuicao-footer button,
+    .modal-distribuicao-footer #btnLimparDistribuicaoEstoque,
+    .modal-distribuicao-footer #btnDistribuirMaterialEstoque {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .modal-distribuicao-dados-grid,
+    .modal-distribuicao-material-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-distribuicao-material-botao {
+        grid-column: auto;
+    }
+
+    .modal-distribuicao-titulo h2 {
+        font-size: 19px;
+    }
+
+    .estoque-card-acoes {
+        width: 100%;
+    }
+
+    #btnAbrirDistribuicaoEstoque,
+    #btnMostrarEstoque {
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .modal-distribuicao-header {
+        gap: 10px;
+    }
+
+    .modal-distribuicao-titulo {
+        gap: 9px;
+    }
+
+    .modal-distribuicao-icone {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+        font-size: 16px;
+    }
+
+    .modal-distribuicao-titulo h2 {
+        font-size: 17px;
+    }
+
+    .modal-distribuicao-secao-titulo h3 {
+        font-size: 14px;
+    }
+}

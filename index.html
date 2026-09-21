@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Sistema de Gestão BEQ Empreendimentos">
+
+    <meta name="author" content="Rocha Digital">
+
+    <title>BEQ Empreendimentos</title>
+
+
+    <!-- ==========================================================
+        FAVICON
+    =========================================================== -->
+
+    <link
+        rel="icon"
+        href="assets/images/logo.png">
+
+
+    <!-- ==========================================================
+        GOOGLE FONTS
+    =========================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- ==========================================================
+        FONT AWESOME
+    =========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <!-- ==========================================================
+        CSS PRINCIPAL
+    =========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/style.css">
+
+
+    <!-- ==========================================================
+        CSS DA ABERTURA - ROCHA DIGITAL
+    =========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/abertura.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================================
+        SIDEBAR
+    =========================================================== -->
+<aside class="sidebar">
+
+    <div class="sidebar-logo">
+        <img 
+            src="assets/images/sidebar-banner.png" 
+            alt="B&Q Empreendimentos"
+        >
+    </div>
+
+    <nav class="sidebar-menu">
+
+
+            <!-- PAINEL CENTRAL -->
+
+            <a
+                href="#"
+                class="sidebar-item active"
+                data-page="dashboard">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Painel Central</span>
+
+            </a>
+
+
+            <!-- PRODUTOS -->
+
+            <a
+                href="#"
+                class="sidebar-item"
+                data-page="produtos">
+
+                <i class="fa-solid fa-box"></i>
+
+                <span>Produtos</span>
+
+            </a>
+
+
+            <!-- CATEGORIAS -->
+
+            <a
+                href="#"
+                class="sidebar-item"
+                data-page="categorias">
+
+                <i class="fa-solid fa-tags"></i>
+
+                <span>Categorias</span>
+
+            </a>
+
+
+            <!-- CLIENTES -->
+
+            <a
+               <li class="sidebar-item" data-page="empresas">
+    <i class="fa-solid fa-building"></i>
+    <span>Empresas</span>
+</li>
+
+            </a>
+
+
+            <!-- FORNECEDORES -->
+
+            <a
+                href="#"
+                class="sidebar-item"
+                data-page="fornecedores">
+
+                <i class="fa-solid fa-truck"></i>
+
+                <span>Fornecedores</span>
+
+            </a>
+
+
+            <!-- OBRAS -->
+
+            <a
+                href="#"
+                class="sidebar-item"
+                data-page="obras">
+
+                <i class="fa-solid fa-helmet-safety"></i>
+
+                <span>Obras</span>
+
+            </a>
+
+
+            <!-- ESTOQUE -->
+
+            <a
+                href="#"
+                class="sidebar-item"
+                data-page="estoque">
+
+                <i class="fa-solid fa-warehouse"></i>
+
+                <span>Estoque</span>
+
+            </a>
+
+
+            <!-- COMPRAS -->
+
+            <a
+                href="#"
+                class="sidebar-item"
+                data-page="compras">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span>Compras</span>
+
+            </a>
+
+
+            <!-- ==================================================
+                 COTAÇÕES
+            =================================================== -->
+
+            <a
+                href="#"
+                class="sidebar-item"
+                data-page="cotacoes">
+
+                <i class="fa-solid fa-file-circle-question"></i>
+
+                <span>Cotações</span>
+
+            </a>
+
+
+            <!-- RELATÓRIOS -->
+
+            <a
+                href="#"
+                class="sidebar-item"
+                data-page="relatorios">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Relatórios</span>
+
+            </a>
+
+
+            <!-- CONFIGURAÇÕES -->
+
+            <a
+                href="#"
+                class="sidebar-item"
+                data-page="configuracoes">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Configurações</span>
+
+            </a>
+
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ==========================================================
+        TOPBAR
+    =========================================================== -->
+
+    <header class="topbar">
+
+
+        <div class="topbar-left">
+
+
+            <button
+                id="btnMenu"
+                class="menu-toggle">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <h1
+                id="tituloPagina"
+                class="topbar-title">
+
+                Painel Central
+
+            </h1>
+
+
+        </div>
+
+        <!-- ==========================================================
+     EMPRESA ATIVA
+========================================================== -->
+
+<div
+    id="empresaAtivaHeader"
+    class="empresa-ativa-header">
+
+    <i class="fa-solid fa-building"></i>
+
+    <div class="empresa-ativa-info">
+
+        <span class="empresa-ativa-label">
+            EMPRESA ATIVA
+        </span>
+
+        <strong id="nomeEmpresaAtivaHeader">
+            Carregando...
+        </strong>
+
+    </div>
+
+</div>
+
+        <div class="topbar-right">
+
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    placeholder="Pesquisar...">
+
+            </div>
+
+
+            <button class="topbar-icon">
+
+                <i class="fa-regular fa-bell"></i>
+
+            </button>
+
+
+           <button
+                   id="btnCalendario"
+                   class="topbar-icon"
+                   type="button">
+
+                 <i class="fa-regular fa-calendar"></i>
+
+            </button>
+
+
+            <div class="user-profile">
+
+
+                <div class="user-avatar">
+
+                    <img
+                        src="assets/images/logobeq.png"
+                        alt="Usuário">
+
+                </div>
+
+
+                <div class="user-info">
+
+                    <span class="user-name">
+
+                        Fernando
+
+                    </span>
+
+
+                    <span class="user-role">
+
+                        Administrador
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================================
+        CONTEÚDO PRINCIPAL
+    =========================================================== -->
+
+    <main class="main-content">
+
+
+        <div class="page">
+
+
+            <div
+                id="app-content"
+                class="container">
+
+                <!-- As páginas serão carregadas aqui -->
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- ==========================================================
+        JAVASCRIPT
+    =========================================================== -->
+
+
+    <!-- ==========================================================
+        CORE
+    =========================================================== -->
+
+    <script
+        src="assets/js/core/constants.js">
+    </script>
+
+
+    <script
+        src="assets/js/core/config.js">
+    </script>
+
+
+    <!-- ==========================================================
+        DASHBOARD
+    =========================================================== -->
+
+    <script
+        src="assets/js/modulos/dashboard/dashboard.js">
+    </script>
+
+
+    <!-- ==========================================================
+        ABERTURA ROCHA DIGITAL
+    =========================================================== -->
+
+    <script
+        src="assets/js/core/abertura.js">
+    </script>
+
+
+    <!-- ==========================================================
+        ROUTER
+    =========================================================== -->
+
+    <script
+        src="assets/js/core/router.js">
+    </script>
+
+
+    <!-- ==========================================================
+        APLICAÇÃO
+    =========================================================== -->
+
+    <script
+        src="assets/js/core/app.js">
+    </script>
+
+
+    <!-- ==========================================================
+        MÓDULO PRODUTOS
+    =========================================================== -->
+
+    <script
+        src="assets/js/modulos/produtos/produtos.js">
+    </script>
+
+
+    <script
+        src="assets/js/modulos/produtos/init.js">
+    </script>
+
+
+    <!-- ==========================================================
+        MÓDULO CATEGORIAS
+    =========================================================== -->
+
+    <script
+        src="assets/js/modulos/categorias/categorias.js">
+    </script>
+
+
+    <script
+        src="assets/js/modulos/categorias/init.js">
+    </script>
+
+
+    <!-- ==========================================================
+        MÓDULO CLIENTES
+    =========================================================== -->
+
+    <script
+        src="assets/js/modulos/clientes/clientes.js">
+    </script>
+
+
+    <script
+        src="assets/js/modulos/clientes/init.js">
+    </script>
+
+<!-- ==========================================================
+     MÓDULO EMPRESAS
+========================================================== -->
+
+<script src="assets/js/modulos/empresas/empresas.js"></script>
+
+
+    <!-- ==========================================================
+        MÓDULO FORNECEDORES
+    =========================================================== -->
+
+    <script
+        src="assets/js/modulos/fornecedores/fornecedores.js">
+    </script>
+
+
+    <script
+        src="assets/js/modulos/fornecedores/init.js">
+    </script>
+
+
+    <!-- ==========================================================
+        MÓDULO OBRAS
+    =========================================================== -->
+
+    <script
+        src="assets/js/modulos/obras/obras.js">
+    </script>
+
+
+    <script
+        src="assets/js/modulos/obras/init.js">
+    </script>
+
+
+    <!-- ==========================================================
+        MÓDULO ESTOQUE
+    =========================================================== -->
+
+    <script
+        src="assets/js/modulos/estoque/estoque.js">
+    </script>
+
+
+    <script
+        src="assets/js/modulos/estoque/init.js">
+    </script>
+
+    <script
+    src="assets/js/modulos/estoque/modal-distribuicao.js">
+    </script>
+
+
+    <!-- ==========================================================
+        MÓDULO COMPRAS
+    =========================================================== -->
+
+    <script
+        src="assets/js/modulos/compras/compras.js">
+    </script>
+
+
+    <!-- ==========================================================
+        MÓDULO COTAÇÕES
+    =========================================================== -->
+
+    <script
+        src="assets/js/modulos/cotacoes/cotacoes.js">
+    </script>
+
+
+    <!-- ==========================================================
+        CORE - LIMPEZA
+    =========================================================== -->
+
+    <script
+        src="assets/js/core/limpeza.js">
+    </script>
+
+
+    <!-- ==========================================================
+        MÓDULO CONFIGURAÇÕES
+    =========================================================== -->
+
+    <script
+        src="assets/js/modulos/configuracoes/configuracoes.js">
+    </script>
+
+<!-- ==========================================================
+     CORE - EMPRESA ATIVA
+========================================================== -->
+
+<script src="assets/js/core/empresaAtiva.js"></script>
+       
+        <!-- RELATÓRIOS -->
+    <script src="assets/js/modulos/relatorios/relatorios.js"></script>
+
+</body>
+
+</html>

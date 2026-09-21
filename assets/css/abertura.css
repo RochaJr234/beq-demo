@@ -1,0 +1,215 @@
+/* ==========================================================
+   ROCHA DIGITAL
+   Arquivo: abertura.css
+   Responsabilidade: Tela de abertura do sistema
+========================================================== */
+
+#tela-abertura {
+    position: fixed;
+    inset: 0;
+
+    z-index: 99999;
+
+    width: 100%;
+    height: 100vh;
+
+    background: #06111f;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+
+/* ==========================================================
+   ÁREA DA LOGO
+========================================================== */
+
+#tela-abertura img {
+    width: 45%;
+    max-width: 650px;
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+
+    animation:
+        aberturaLogo 1.8s ease-out,
+        aberturaBrilho 2.5s ease-in-out infinite;
+}
+
+
+/* ==========================================================
+   EFEITO DE BRILHO / CARREGAMENTO
+========================================================== */
+
+#tela-abertura::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 45%;
+    max-width: 650px;
+
+    height: 3px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translateX(-50%);
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #00aaff,
+        #ffffff,
+        #00aaff,
+        transparent
+    );
+
+    box-shadow:
+        0 0 8px #008cff,
+        0 0 18px #008cff,
+        0 0 35px #008cff;
+
+    opacity: 0;
+
+    animation: carregamentoBrilho 2.2s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   ENTRADA DA LOGO
+========================================================== */
+
+@keyframes aberturaLogo {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.82);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.03);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* ==========================================================
+   PULSAÇÃO SUAVE
+========================================================== */
+
+@keyframes aberturaBrilho {
+
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.08);
+    }
+
+}
+
+
+/* ==========================================================
+   EFEITO DE CARREGAMENTO
+========================================================== */
+
+@keyframes carregamentoBrilho {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scaleX(0.2);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scaleX(1);
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) scaleX(0.2);
+    }
+
+}
+
+
+/* ==========================================================
+   SAÍDA DA ABERTURA
+========================================================== */
+
+#tela-abertura.encerrando {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+}
+
+
+/* ==========================================================
+   TABLETS
+========================================================== */
+
+@media (max-width: 768px) {
+
+    #tela-abertura img {
+        width: 60%;
+        max-width: 500px;
+    }
+
+    #tela-abertura::after {
+        width: 60%;
+    }
+
+}
+
+
+/* ==========================================================
+   CELULARES
+========================================================== */
+
+@media (max-width: 480px) {
+
+    #tela-abertura img {
+        width: 75%;
+    }
+
+    #tela-abertura::after {
+        width: 75%;
+    }
+
+}

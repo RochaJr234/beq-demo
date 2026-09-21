@@ -1,0 +1,301 @@
+/* ==========================================================
+   BEQ EMPREENDIMENTOS
+   Arquivo: notificacoes.css
+   Responsabilidade: Painel de notificações da Topbar
+   Autor: Rocha Digital
+   Versão: 2.0
+========================================================== */
+
+
+/* ==========================================================
+   ÁREA DO BOTÃO + PAINEL
+========================================================== */
+
+.notificacoes-wrapper {
+
+    position: relative;
+
+}
+
+
+/* ==========================================================
+   PAINEL
+========================================================== */
+
+.notificacoes-painel {
+
+    position: absolute;
+
+    top: 54px;
+
+    right: 0;
+
+    width: 360px;
+
+    background: var(--bg-topbar);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-lg);
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-8px);
+
+    transition:
+        opacity .2s ease,
+        visibility .2s ease,
+        transform .2s ease;
+
+    z-index: 2000;
+
+}
+
+
+/* ==========================================================
+   PAINEL ABERTO
+========================================================== */
+
+.notificacoes-wrapper.aberto
+.notificacoes-painel {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+}
+
+
+/* ==========================================================
+   CABEÇALHO
+========================================================== */
+
+.notificacoes-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 16px 18px;
+
+    border-bottom: 1px solid var(--border-color);
+
+}
+
+
+.notificacoes-header h3 {
+
+    margin: 0;
+
+    font-size: 16px;
+
+    font-weight: var(--font-bold);
+
+    color: var(--text-primary);
+
+}
+
+
+.notificacoes-limpar {
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--color-primary);
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+}
+
+
+/* ==========================================================
+   LISTA
+========================================================== */
+
+.notificacoes-lista {
+
+    max-height: 360px;
+
+    overflow-y: auto;
+
+}
+
+
+/* ==========================================================
+   ITEM
+========================================================== */
+
+.notificacao-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 15px 18px;
+
+    border-bottom: 1px solid var(--border-color);
+
+    transition: var(--transition-normal);
+
+}
+
+
+.notificacao-item:hover {
+
+    background: var(--bg-page);
+
+}
+
+
+/* ==========================================================
+   ÍCONE
+========================================================== */
+
+.notificacao-icone {
+
+    width: 36px;
+
+    height: 36px;
+
+    min-width: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: var(--bg-page);
+
+    color: var(--color-primary);
+
+}
+
+
+/* ==========================================================
+   CONTEÚDO
+========================================================== */
+
+.notificacao-conteudo {
+
+    flex: 1;
+
+}
+
+
+.notificacao-conteudo strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 13px;
+
+    color: var(--text-primary);
+
+}
+
+
+.notificacao-conteudo p {
+
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: var(--text-secondary);
+
+}
+
+
+/* ==========================================================
+   DATA / HORÁRIO
+========================================================== */
+
+.notificacao-hora {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 10px;
+
+    color: var(--text-secondary);
+
+}
+
+
+/* ==========================================================
+   ESTADO VAZIO
+========================================================== */
+
+.notificacoes-vazio {
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    color: var(--text-secondary);
+
+}
+
+
+.notificacoes-vazio i {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 28px;
+
+}
+
+
+.notificacoes-vazio p {
+
+    margin: 0;
+
+    font-size: 13px;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .notificacoes-painel {
+
+        position: fixed;
+
+        top: 70px;
+
+        left: 15px;
+
+        right: 15px;
+
+        width: auto;
+
+    }
+
+}

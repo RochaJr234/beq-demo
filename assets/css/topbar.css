@@ -1,0 +1,350 @@
+/* ===========================================================
+   BEQ EMPREENDIMENTOS
+   Arquivo: topbar.css
+   Descrição: Barra superior do sistema.
+   Autor: Rocha Digital
+   Versão: 2.0
+=========================================================== */
+
+
+/* ===========================================================
+   TOPBAR
+=========================================================== */
+
+.topbar {
+    position: fixed;
+
+    top: 0;
+    left: var(--sidebar-width);
+    right: 0;
+
+    height: var(--height-topbar);
+
+    background: var(--bg-topbar);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 24px;
+
+    box-shadow: var(--shadow-topbar);
+
+    z-index: 900;
+
+    box-sizing: border-box;
+}
+
+
+/* ===========================================================
+   LADO ESQUERDO
+=========================================================== */
+
+.topbar-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    min-width: 0;
+}
+
+
+/* ===========================================================
+   TÍTULO DO HEADER
+=========================================================== */
+
+.topbar-title {
+    margin: 0;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    color: #0F172A;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+
+    letter-spacing: -0.3px;
+}
+
+
+/* ===========================================================
+   LADO DIREITO
+=========================================================== */
+
+.topbar-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+/* ===========================================================
+   PESQUISA — TOPBAR
+=========================================================== */
+
+.search-box {
+    width: 300px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 14px;
+
+    gap: 10px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E2E8F0;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+
+/* ÍCONE */
+
+.search-box i {
+    flex-shrink: 0;
+
+    color: #64748B;
+
+    font-size: 15px;
+
+    transition: color .2s ease;
+}
+
+
+/* CAMPO */
+
+.search-box input {
+    flex: 1;
+
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #0F172A;
+
+    font-size: 13px;
+}
+
+
+/* PLACEHOLDER */
+
+.search-box input::placeholder {
+    color: #94A3B8;
+}
+
+
+/* FOCO */
+
+.search-box:focus-within {
+    background: #FFFFFF;
+
+    border-color: #93C5FD;
+
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.08);
+}
+
+.search-box:focus-within i {
+    color: #2563EB;
+}
+
+
+/* ===========================================================
+   BOTÕES DE AÇÃO — TOPBAR
+=========================================================== */
+
+.topbar-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: #FFFFFF;
+
+    color: #475569;
+
+    border: 1px solid #E2E8F0;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+/* ÍCONE */
+
+.topbar-icon i {
+    font-size: 16px;
+
+    transition: color .2s ease;
+}
+
+
+/* AO PASSAR O MOUSE */
+
+.topbar-icon:hover {
+    background: #F8FAFC;
+
+    color: #2563EB;
+
+    border-color: #BFDBFE;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.07);
+}
+
+
+/* AO CLICAR */
+
+.topbar-icon:active {
+    transform: scale(0.96);
+
+    box-shadow: none;
+}
+
+
+/* ===========================================================
+   PERFIL — TOPBAR
+=========================================================== */
+
+.user-profile {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 4px 6px 4px 4px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+
+/* AVATAR */
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 2px solid #E2E8F0;
+
+    background: #F8FAFC;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+/* IMAGEM */
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* INFORMAÇÕES */
+
+.user-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+
+/* NOME */
+
+.user-name {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #0F172A;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+/* CARGO */
+
+.user-role {
+    font-size: 11px;
+
+    font-weight: 400;
+
+    color: #64748B;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+/* HOVER */
+
+.user-profile:hover {
+    background: #F8FAFC;
+}
+
+.user-profile:hover .user-avatar {
+    border-color: #BFDBFE;
+
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.06);
+}

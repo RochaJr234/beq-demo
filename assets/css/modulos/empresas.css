@@ -1,0 +1,791 @@
+/* ==========================================================
+   BEQ EMPREENDIMENTOS
+   MÓDULO: EMPRESAS
+   Arquivo: assets/css/modulos/empresas.css
+
+   Responsabilidade:
+   - Visual exclusivo da tela Empresas
+   - Indicadores
+   - Pesquisa
+   - Tabela
+   - Modal
+   - Formulário
+   - Responsividade
+
+   IMPORTANTE:
+   Este arquivo não altera:
+   - Sidebar
+   - Topbar
+   - Layout geral
+   - Outros módulos
+========================================================== */
+
+
+/* ==========================================================
+   CONTAINER PRINCIPAL
+========================================================== */
+
+.empresas {
+    width: 100%;
+    min-height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   CABEÇALHO
+========================================================== */
+
+.empresas-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.empresas-titulo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.empresas-icone-titulo {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf2ff;
+    color: #1456b8;
+
+    border-radius: 12px;
+    font-size: 21px;
+}
+
+.empresas-header h1 {
+    margin: 0;
+
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 700;
+
+    color: #10213f;
+}
+
+.empresas-header p {
+    margin: 6px 0 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    color: #6b7a90;
+}
+
+
+/* ==========================================================
+   INDICADORES
+========================================================== */
+
+.empresas-indicadores {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 24px;
+}
+
+.empresa-indicador-card {
+    min-height: 128px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7ecf3;
+    border-radius: 14px;
+
+    box-shadow: 0 5px 18px rgba(16, 33, 63, 0.06);
+
+    box-sizing: border-box;
+}
+
+.empresa-indicador-conteudo {
+    min-width: 0;
+}
+
+.empresa-indicador-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    line-height: 1.4;
+
+    color: #65748b;
+}
+
+.empresa-indicador-conteudo strong {
+    display: block;
+
+    font-size: 30px;
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: #10213f;
+}
+
+.empresa-indicador-icone {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1f5fb;
+
+    color: #d4dbe5;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+}
+
+
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.empresas-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e7ecf3;
+    border-radius: 14px;
+
+    box-shadow: 0 5px 18px rgba(16, 33, 63, 0.05);
+
+    box-sizing: border-box;
+
+    margin-bottom: 24px;
+}
+
+.empresas-pesquisa-card {
+    padding: 22px 24px;
+}
+
+.empresas-card-header {
+    padding: 22px 24px;
+
+    border-bottom: 1px solid #edf0f5;
+}
+
+.empresas-card-header h2,
+.empresas-pesquisa-cabecalho h2 {
+    margin: 0;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    color: #10213f;
+}
+
+.empresas-card-header p,
+.empresas-pesquisa-cabecalho p {
+    margin: 6px 0 0;
+
+    font-size: 13px;
+
+    color: #738197;
+}
+
+
+/* ==========================================================
+   PESQUISA
+========================================================== */
+
+.empresas-pesquisa-cabecalho {
+    margin-bottom: 18px;
+}
+
+.empresas-pesquisa-area {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.empresas-pesquisa-campo {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe5ee;
+    border-radius: 9px;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.empresas-pesquisa-campo:focus-within {
+    border-color: #1f5fc4;
+
+    box-shadow: 0 0 0 3px rgba(31, 95, 196, 0.10);
+}
+
+.empresas-pesquisa-campo i {
+    flex: 0 0 auto;
+
+    color: #7b899d;
+
+    font-size: 15px;
+}
+
+.empresas-pesquisa-campo input {
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+
+    border: 0;
+    outline: none;
+
+    background: transparent;
+
+    color: #17243b;
+
+    font-size: 14px;
+}
+
+.empresas-pesquisa-campo input::placeholder {
+    color: #9aa6b7;
+}
+
+.empresas-pesquisa-area .btn {
+    min-height: 46px;
+    white-space: nowrap;
+}
+
+
+/* ==========================================================
+   TABELA
+========================================================== */
+
+.empresas-tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.empresas-tabela thead th {
+    padding: 15px 18px;
+
+    background: #f8fafc;
+
+    border-bottom: 1px solid #e7ecf3;
+
+    color: #607087;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+.empresas-tabela tbody td {
+    padding: 16px 18px;
+
+    border-bottom: 1px solid #edf0f4;
+
+    color: #25344d;
+
+    font-size: 13px;
+
+    vertical-align: middle;
+}
+
+.empresas-tabela tbody tr {
+    transition: background 0.15s ease;
+}
+
+.empresas-tabela tbody tr:hover {
+    background: #f8fbff;
+}
+
+.empresas-tabela tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* ==========================================================
+   AÇÕES DA TABELA
+========================================================== */
+
+.empresas-tabela .table-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.empresas-tabela .table-actions button {
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dfe5ee;
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #53657e;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.empresas-tabela .table-actions button:hover {
+    background: #f1f6ff;
+
+    border-color: #c9d9f3;
+
+    color: #1456b8;
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.empresas-tabela .status-badge,
+.empresas-tabela .badge-status {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 28px;
+
+    padding: 4px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.empresas-tabela .status-ativa,
+.empresas-tabela .status-ativo {
+    background: #eaf8ef;
+    color: #188348;
+}
+
+.empresas-tabela .status-inativa,
+.empresas-tabela .status-inativo {
+    background: #fbeeee;
+    color: #b33a3a;
+}
+
+
+/* ==========================================================
+   ESTADO VAZIO
+========================================================== */
+
+#estadoVazioEmpresas {
+    display: none;
+
+    padding: 55px 25px;
+
+    text-align: center;
+}
+
+#estadoVazioEmpresas .estado-vazio-icone {
+    width: 64px;
+    height: 64px;
+
+    margin: 0 auto 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eef4fc;
+
+    color: #6f88aa;
+
+    border-radius: 50%;
+
+    font-size: 24px;
+}
+
+#estadoVazioEmpresas h3 {
+    margin: 0 0 8px;
+
+    font-size: 17px;
+
+    color: #25344d;
+}
+
+#estadoVazioEmpresas p {
+    max-width: 460px;
+
+    margin: 0 auto 20px;
+
+    font-size: 13px;
+    line-height: 1.6;
+
+    color: #78869a;
+}
+
+
+/* ==========================================================
+   MODAL
+========================================================== */
+
+.empresas-modal {
+    width: min(900px, calc(100vw - 32px));
+
+    max-height: calc(100vh - 40px);
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   FORMULÁRIO DO MODAL
+========================================================== */
+
+.empresas-modal form {
+    width: 100%;
+}
+
+.empresas-modal .form-section {
+    padding: 22px 24px;
+
+    border-bottom: 1px solid #edf0f5;
+}
+
+.empresas-modal .form-section:last-of-type {
+    border-bottom: 0;
+}
+
+.empresas-modal .form-section-title {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 18px;
+
+    color: #173968;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.empresas-modal .form-section-title i {
+    color: #1c5db9;
+}
+
+
+/* ==========================================================
+   GRID DO FORMULÁRIO
+========================================================== */
+
+.empresas-modal .form-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.empresas-modal .form-group {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.empresas-modal .form-group.form-col-span-2 {
+    grid-column: span 2;
+}
+
+
+/* ==========================================================
+   LABELS
+========================================================== */
+
+.empresas-modal .form-group label {
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #52627a;
+}
+
+.empresas-modal .form-group label span {
+    color: #d64040;
+}
+
+
+/* ==========================================================
+   INPUTS
+========================================================== */
+
+.empresas-modal .form-group input,
+.empresas-modal .form-group select,
+.empresas-modal .form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #dce3ed;
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #1b2b44;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.empresas-modal .form-group input,
+.empresas-modal .form-group select {
+    height: 43px;
+
+    padding: 0 12px;
+}
+
+.empresas-modal .form-group textarea {
+    min-height: 100px;
+
+    padding: 11px 12px;
+
+    resize: vertical;
+}
+
+.empresas-modal .form-group input:focus,
+.empresas-modal .form-group select:focus,
+.empresas-modal .form-group textarea:focus {
+    border-color: #1f5fc4;
+
+    box-shadow:
+        0 0 0 3px rgba(31, 95, 196, 0.10);
+}
+
+.empresas-modal .form-group input[readonly] {
+    background: #f5f7fa;
+
+    color: #738197;
+
+    cursor: not-allowed;
+}
+
+
+/* ==========================================================
+   RODAPÉ DO MODAL
+========================================================== */
+
+.empresas-modal .modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 18px 24px;
+
+    background: #fafbfd;
+
+    border-top: 1px solid #edf0f5;
+}
+
+
+/* ==========================================================
+   SCROLLBAR DO MODAL
+========================================================== */
+
+.empresas-modal::-webkit-scrollbar {
+    width: 7px;
+}
+
+.empresas-modal::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.empresas-modal::-webkit-scrollbar-thumb {
+    background: #cbd4e1;
+
+    border-radius: 10px;
+}
+
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media (max-width: 1200px) {
+
+    .empresas-indicadores {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .empresas-modal .form-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .empresas-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .empresas-header > .btn {
+        width: 100%;
+    }
+
+    .empresas-pesquisa-area {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .empresas-pesquisa-area .btn {
+        width: 100%;
+    }
+
+    .empresas-tabela {
+        min-width: 850px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .empresas-indicadores {
+        grid-template-columns: 1fr;
+    }
+
+    .empresas-pesquisa-card {
+        padding: 18px;
+    }
+
+    .empresas-card-header {
+        padding: 18px;
+    }
+
+    .empresas-modal {
+        width: calc(100vw - 20px);
+
+        max-height: calc(100vh - 20px);
+    }
+
+    .empresas-modal .form-section {
+        padding: 18px;
+    }
+
+    .empresas-modal .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .empresas-modal .form-group.form-col-span-2 {
+        grid-column: span 1;
+    }
+
+    .empresas-modal .modal-footer {
+        padding: 16px 18px;
+
+        flex-direction: column-reverse;
+    }
+
+    .empresas-modal .modal-footer .btn {
+        width: 100%;
+    }
+
+}
+
+
+/* ==========================================================
+   ACESSIBILIDADE / REDUÇÃO DE MOVIMENTO
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .empresas *,
+    .empresas *::before,
+    .empresas *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+
+}

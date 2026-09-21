@@ -1,0 +1,438 @@
+<section class="configuracoes">
+
+    <!-- ==========================================================
+         CABEÇALHO
+    =========================================================== -->
+
+    <div class="configuracoes-header">
+
+        <div class="configuracoes-titulo">
+
+            <div class="configuracoes-titulo-icone">
+                <i class="fa-solid fa-gear"></i>
+            </div>
+
+            <div>
+
+                <h1>Configurações</h1>
+
+                <p>
+                    Administração, informações e manutenção do sistema
+                    BEQ Empreendimentos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================================
+         MANUTENÇÃO DO SISTEMA
+    =========================================================== -->
+
+    <div class="configuracoes-card">
+
+        <div class="configuracoes-card-header">
+
+            <div class="configuracoes-icone">
+
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+
+            </div>
+
+            <div>
+
+                <h2>Manutenção do Sistema</h2>
+
+                <p>
+                    Gerencie os dados armazenados localmente neste dispositivo.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ======================================================
+             LIMPEZA DE DADOS DE TESTE
+        ======================================================= -->
+
+        <div class="configuracoes-opcao">
+
+            <div class="configuracoes-opcao-info">
+
+                <div class="configuracoes-opcao-icone">
+
+                    <i class="fa-solid fa-broom"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>Limpar dados de teste</h3>
+
+                    <p>
+                        Remove os cadastros e registros locais utilizados
+                        durante os testes do sistema.
+                    </p>
+
+                    <small>
+                        Produtos, categorias, clientes, fornecedores,
+                        obras, compras e movimentações de estoque.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="btnLimparDadosTeste"
+                class="btn btn-danger">
+
+                <i class="fa-solid fa-trash-can"></i>
+
+                Limpar dados de teste
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================================
+         DADOS DO SISTEMA
+    =========================================================== -->
+
+    <div class="configuracoes-card">
+
+        <div class="configuracoes-card-header">
+
+            <div class="configuracoes-icone">
+
+                <i class="fa-solid fa-database"></i>
+
+            </div>
+
+            <div>
+
+                <h2>Dados do Sistema</h2>
+
+                <p>
+                    Consulte a quantidade de registros armazenados
+                    localmente.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="configuracoes-dados-grid">
+
+
+            <!-- PRODUTOS -->
+
+            <div class="configuracoes-dado">
+
+                <div class="configuracoes-dado-icone">
+                    <i class="fa-solid fa-box"></i>
+                </div>
+
+                <div>
+
+                    <span>Produtos</span>
+
+                    <strong id="configTotalProdutos">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- CATEGORIAS -->
+
+            <div class="configuracoes-dado">
+
+                <div class="configuracoes-dado-icone">
+                    <i class="fa-solid fa-tags"></i>
+                </div>
+
+                <div>
+
+                    <span>Categorias</span>
+
+                    <strong id="configTotalCategorias">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLIENTES -->
+
+            <div class="configuracoes-dado">
+
+                <div class="configuracoes-dado-icone">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+
+                    <span>Clientes</span>
+
+                    <strong id="configTotalClientes">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORNECEDORES -->
+
+            <div class="configuracoes-dado">
+
+                <div class="configuracoes-dado-icone">
+                    <i class="fa-solid fa-truck-field"></i>
+                </div>
+
+                <div>
+
+                    <span>Fornecedores</span>
+
+                    <strong id="configTotalFornecedores">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- OBRAS -->
+
+            <div class="configuracoes-dado">
+
+                <div class="configuracoes-dado-icone">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+
+                <div>
+
+                    <span>Obras</span>
+
+                    <strong id="configTotalObras">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- COMPRAS -->
+
+            <div class="configuracoes-dado">
+
+                <div class="configuracoes-dado-icone">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+
+                <div>
+
+                    <span>Compras</span>
+
+                    <strong id="configTotalCompras">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOVIMENTAÇÕES -->
+
+            <div class="configuracoes-dado">
+
+                <div class="configuracoes-dado-icone">
+                    <i class="fa-solid fa-right-left"></i>
+                </div>
+
+                <div>
+
+                    <span>Movimentações</span>
+
+                    <strong id="configTotalMovimentacoes">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- COTAÇÕES -->
+
+            <div class="configuracoes-dado">
+
+                <div class="configuracoes-dado-icone">
+                    <i class="fa-solid fa-file-invoice"></i>
+                </div>
+
+                <div>
+
+                    <span>Cotações</span>
+
+                    <strong id="configTotalCotacoes">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================================
+         INFORMAÇÕES DO SISTEMA
+    =========================================================== -->
+
+    <div class="configuracoes-card">
+
+        <div class="configuracoes-card-header">
+
+            <div class="configuracoes-icone">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+            </div>
+
+            <div>
+
+                <h2>Informações do Sistema</h2>
+
+                <p>
+                    Informações sobre a versão e funcionamento do sistema.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="configuracoes-informacoes">
+
+
+            <div class="configuracoes-informacao">
+
+                <span>
+                    Sistema
+                </span>
+
+                <strong>
+                    BEQ Empreendimentos
+                </strong>
+
+            </div>
+
+
+            <div class="configuracoes-informacao">
+
+                <span>
+                    Versão
+                </span>
+
+                <strong id="configVersao">
+                    2.0.0
+                </strong>
+
+            </div>
+
+
+            <div class="configuracoes-informacao">
+
+                <span>
+                    Armazenamento
+                </span>
+
+                <strong>
+                    LocalStorage
+                </strong>
+
+            </div>
+
+
+            <div class="configuracoes-informacao">
+
+                <span>
+                    Funcionamento
+                </span>
+
+                <strong class="config-status-online">
+
+                    <i class="fa-solid fa-circle"></i>
+
+                    Sistema operacional
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================================
+         AVISO
+    =========================================================== -->
+
+    <div class="configuracoes-aviso">
+
+        <i class="fa-solid fa-triangle-exclamation"></i>
+
+        <div>
+
+            <strong>Atenção</strong>
+
+            <p>
+                A limpeza remove os dados armazenados localmente
+                neste navegador e não poderá ser desfeita.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================================
+         RODAPÉ
+    =========================================================== -->
+
+    <div class="configuracoes-footer">
+
+        <span>
+            BEQ Empreendimentos
+        </span>
+
+        <span>
+            Administração do sistema
+        </span>
+
+    </div>
+
+</section>

@@ -1,0 +1,465 @@
+<section class="dashboard">
+
+    <!-- =======================================================
+         BOAS-VINDAS
+    ======================================================== -->
+    <div class="card dashboard-welcome">
+
+        <div class="dashboard-welcome-content">
+
+            <div class="dashboard-welcome-icon">
+                <i class="fa-solid fa-building"></i>
+            </div>
+
+            <div>
+                <h2>
+                    Olá, Fernando
+                </h2>
+
+                <p>
+                    Acompanhe sua empresa de forma rápida e simples.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="dashboard-welcome-info">
+
+            <i class="fa-regular fa-calendar"></i>
+
+            <div>
+                <span>Hoje</span>
+                <strong id="dashboardData">--/--/----</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =======================================================
+         INDICADORES
+    ======================================================== -->
+    <div class="dashboard-cards">
+
+        <!-- PRODUTOS -->
+        <div class="card dashboard-card">
+
+            <div class="dashboard-card-icon">
+                <i class="fa-solid fa-box"></i>
+            </div>
+
+            <div class="dashboard-card-info">
+
+                <span>Total de Produtos</span>
+
+                <h2 id="total-produtos">
+                    0
+                </h2>
+
+                <small>
+                    Produtos cadastrados
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- CATEGORIAS -->
+        <div class="card dashboard-card">
+
+            <div class="dashboard-card-icon">
+                <i class="fa-solid fa-tags"></i>
+            </div>
+
+            <div class="dashboard-card-info">
+
+                <span>Categorias</span>
+
+                <h2 id="total-categorias">
+                    0
+                </h2>
+
+                <small>
+                    Categorias cadastradas
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORNECEDORES -->
+        <div class="card dashboard-card">
+
+            <div class="dashboard-card-icon">
+                <i class="fa-solid fa-truck"></i>
+            </div>
+
+            <div class="dashboard-card-info">
+
+                <span>Fornecedores</span>
+
+                <h2 id="total-fornecedores">
+                    0
+                </h2>
+
+                <small>
+                    Fornecedores cadastrados
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- OBRAS -->
+        <div class="card dashboard-card">
+
+            <div class="dashboard-card-icon">
+                <i class="fa-solid fa-helmet-safety"></i>
+            </div>
+
+            <div class="dashboard-card-info">
+
+                <span>Obras</span>
+
+                <h2 id="total-obras">
+                    0
+                </h2>
+
+                <small>
+                    Obras cadastradas
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =======================================================
+         ÁREA PRINCIPAL
+    ======================================================== -->
+    <section class="dashboard-layout">
+
+
+        <!-- ===================================================
+             COLUNA ESQUERDA
+        ==================================================== -->
+        <div class="dashboard-left">
+
+
+            <!-- =================================================
+                 MOVIMENTAÇÃO DOS ÚLTIMOS 7 DIAS
+            ================================================== -->
+            <div class="card dashboard-panel">
+
+                <div class="dashboard-panel-header">
+
+                    <div>
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <h3>
+                            Movimentações dos últimos 7 dias
+                        </h3>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="dashboard-link"
+                        data-page="estoque"
+                    >
+                        Ver estoque
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="dashboardGraficoMovimentos"
+                    class="dashboard-grafico-movimentos"
+                >
+
+                    <div class="dashboard-grafico-empty">
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                        <p>
+                            Nenhuma movimentação registrada.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PRODUTOS COM ESTOQUE BAIXO
+            ================================================== -->
+            <div class="card dashboard-panel">
+
+                <div class="dashboard-panel-header">
+
+                    <div>
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        <h3>
+                            Produtos com Estoque Baixo
+                        </h3>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="dashboard-link"
+                        data-page="produtos"
+                    >
+                        Ver todos
+                    </button>
+
+                </div>
+
+
+                <div class="dashboard-table">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Produto
+                                </th>
+
+                                <th>
+                                    Estoque
+                                </th>
+
+                                <th>
+                                    Mínimo
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="dashboardEstoqueBaixo">
+
+                            <tr>
+
+                                <td
+                                    colspan="3"
+                                    class="empty-table"
+                                >
+                                    Nenhum produto com estoque baixo.
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 ÚLTIMAS MOVIMENTAÇÕES
+            ================================================== -->
+            <div class="card dashboard-panel">
+
+                <div class="dashboard-panel-header">
+
+                    <div>
+
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+
+                        <h3>
+                            Últimas movimentações
+                        </h3>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="dashboard-link"
+                        data-page="estoque"
+                    >
+                        Ver todas
+                    </button>
+
+                </div>
+
+
+                <div class="dashboard-table">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Data
+                                </th>
+
+                                <th>
+                                    Módulo
+                                </th>
+
+                                <th>
+                                    Descrição
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="dashboardMovimentos">
+
+                            <tr>
+
+                                <td
+                                    colspan="3"
+                                    class="empty-table"
+                                >
+                                    Nenhuma movimentação registrada.
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ===================================================
+             COLUNA DIREITA
+        ==================================================== -->
+        <div class="dashboard-right">
+
+
+            <!-- =================================================
+                 AÇÕES RÁPIDAS
+            ================================================== -->
+            <div class="card dashboard-panel dashboard-actions-panel">
+
+                <div class="dashboard-panel-header">
+
+                    <div>
+
+                        <i class="fa-solid fa-bolt"></i>
+
+                        <h3>
+                            Ações rápidas
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <section class="dashboard-acoes">
+
+
+                    <!-- NOVO PRODUTO -->
+                    <button
+                        type="button"
+                        class="btn btn-primary dashboard-action-btn"
+                        data-page="produtos"
+                        data-action="novo-produto"
+                    >
+
+                        <i class="fa-solid fa-box"></i>
+
+                        <span>
+                            Novo Produto
+                        </span>
+
+                    </button>
+
+
+                    <!-- NOVA CATEGORIA -->
+                    <button
+                        type="button"
+                        class="btn btn-primary dashboard-action-btn"
+                        data-page="categorias"
+                        data-action="nova-categoria"
+                    >
+
+                        <i class="fa-solid fa-tags"></i>
+
+                        <span>
+                            Nova Categoria
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- NOVO FORNECEDOR -->
+                    <button
+                        type="button"
+                        class="btn btn-primary dashboard-action-btn"
+                        data-page="fornecedores"
+                        data-action="novo-fornecedor"
+                    >
+
+                        <i class="fa-solid fa-truck"></i>
+
+                        <span>
+                            Novo Fornecedor
+                        </span>
+
+                    </button>
+
+
+                    <!-- NOVA OBRA -->
+                    <button
+                        type="button"
+                        class="btn btn-primary dashboard-action-btn"
+                        data-page="obras"
+                        data-action="nova-obra"
+                    >
+
+                        <i class="fa-solid fa-helmet-safety"></i>
+
+                        <span>
+                            Nova Obra
+                        </span>
+
+                    </button>
+
+
+                </section>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</section>

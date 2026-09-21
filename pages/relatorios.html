@@ -1,0 +1,600 @@
+<section class="relatorios">
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <div class="relatorios-header">
+
+        <div class="relatorios-titulo">
+
+            <div class="relatorios-titulo-icone">
+                <i class="fa-solid fa-chart-column"></i>
+            </div>
+
+            <div>
+
+                <h1>Relatórios</h1>
+
+                <p>
+                    Consulte e analise as informações do sistema BEQ Empreendimentos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         INDICADORES
+    ====================================================== -->
+
+    <div class="relatorios-indicadores">
+
+        <!-- PRODUTOS -->
+
+        <div class="relatorio-indicador">
+
+            <div class="relatorio-indicador-icone">
+                <i class="fa-solid fa-box"></i>
+            </div>
+
+            <div>
+
+                <span>Produtos</span>
+
+                <strong id="relatorioTotalProdutos">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- CLIENTES -->
+
+        <div class="relatorio-indicador">
+
+            <div class="relatorio-indicador-icone">
+                <i class="fa-solid fa-users"></i>
+            </div>
+
+            <div>
+
+                <span>Clientes</span>
+
+                <strong id="relatorioTotalClientes">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- OBRAS -->
+
+        <div class="relatorio-indicador">
+
+            <div class="relatorio-indicador-icone">
+                <i class="fa-solid fa-building"></i>
+            </div>
+
+            <div>
+
+                <span>Obras</span>
+
+                <strong id="relatorioTotalObras">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- COMPRAS -->
+
+        <div class="relatorio-indicador">
+
+            <div class="relatorio-indicador-icone">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+
+            <div>
+
+                <span>Compras</span>
+
+                <strong id="relatorioTotalCompras">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         RELATÓRIOS DISPONÍVEIS
+    ====================================================== -->
+
+    <div class="relatorios-card">
+
+        <div class="relatorios-card-header">
+
+            <div>
+
+                <h2>
+                    Relatórios disponíveis
+                </h2>
+
+                <p>
+                    Selecione o tipo de relatório que deseja consultar.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="relatorios-opcoes">
+
+            <!-- =================================================
+                 PRODUTOS
+            ================================================== -->
+
+            <button
+                type="button"
+                class="relatorio-opcao"
+                data-relatorio="produtos"
+            >
+
+                <div class="relatorio-opcao-icone">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+
+                <div class="relatorio-opcao-info">
+
+                    <h3>
+                        Produtos
+                    </h3>
+
+                    <p>
+                        Consulte produtos, categorias, marcas, preços e estoque.
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right relatorio-opcao-seta"></i>
+
+            </button>
+
+
+            <!-- =================================================
+                 ESTOQUE
+            ================================================== -->
+
+            <button
+                type="button"
+                class="relatorio-opcao"
+                data-relatorio="estoque"
+            >
+
+                <div class="relatorio-opcao-icone">
+                    <i class="fa-solid fa-warehouse"></i>
+                </div>
+
+                <div class="relatorio-opcao-info">
+
+                    <h3>
+                        Estoque
+                    </h3>
+
+                    <p>
+                        Consulte estoque atual, produtos com estoque baixo e movimentações.
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right relatorio-opcao-seta"></i>
+
+            </button>
+
+
+            <!-- =================================================
+                 MOVIMENTAÇÕES
+            ================================================== -->
+
+            <button
+                type="button"
+                class="relatorio-opcao"
+                data-relatorio="movimentacoes"
+            >
+
+                <div class="relatorio-opcao-icone">
+                    <i class="fa-solid fa-right-left"></i>
+                </div>
+
+                <div class="relatorio-opcao-info">
+
+                    <h3>
+                        Movimentações de Estoque
+                    </h3>
+
+                    <p>
+                        Consulte entradas e saídas de materiais.
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right relatorio-opcao-seta"></i>
+
+            </button>
+
+
+            <!-- =================================================
+                 COMPRAS
+            ================================================== -->
+
+            <button
+                type="button"
+                class="relatorio-opcao"
+                data-relatorio="compras"
+            >
+
+                <div class="relatorio-opcao-icone">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+
+                <div class="relatorio-opcao-info">
+
+                    <h3>
+                        Compras
+                    </h3>
+
+                    <p>
+                        Consulte compras realizadas, fornecedores, produtos e valores.
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right relatorio-opcao-seta"></i>
+
+            </button>
+
+
+            <!-- =================================================
+                 COTAÇÕES
+            ================================================== -->
+
+            <button
+                type="button"
+                class="relatorio-opcao"
+                data-relatorio="cotacoes"
+            >
+
+                <div class="relatorio-opcao-icone">
+                    <i class="fa-solid fa-file-invoice"></i>
+                </div>
+
+                <div class="relatorio-opcao-info">
+
+                    <h3>
+                        Cotações
+                    </h3>
+
+                    <p>
+                        Consulte as cotações solicitadas aos fornecedores.
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right relatorio-opcao-seta"></i>
+
+            </button>
+
+
+            <!-- =================================================
+                 CLIENTES
+            ================================================== -->
+
+            <button
+                type="button"
+                class="relatorio-opcao"
+                data-relatorio="clientes"
+            >
+
+                <div class="relatorio-opcao-icone">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div class="relatorio-opcao-info">
+
+                    <h3>
+                        Clientes
+                    </h3>
+
+                    <p>
+                        Consulte os clientes cadastrados no sistema.
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right relatorio-opcao-seta"></i>
+
+            </button>
+
+
+            <!-- =================================================
+                 FORNECEDORES
+            ================================================== -->
+
+            <button
+                type="button"
+                class="relatorio-opcao"
+                data-relatorio="fornecedores"
+            >
+
+                <div class="relatorio-opcao-icone">
+                    <i class="fa-solid fa-truck-field"></i>
+                </div>
+
+                <div class="relatorio-opcao-info">
+
+                    <h3>
+                        Fornecedores
+                    </h3>
+
+                    <p>
+                        Consulte fornecedores, contatos e situação cadastral.
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right relatorio-opcao-seta"></i>
+
+            </button>
+
+
+            <!-- =================================================
+                 OBRAS
+            ================================================== -->
+
+            <button
+                type="button"
+                class="relatorio-opcao"
+                data-relatorio="obras"
+            >
+
+                <div class="relatorio-opcao-icone">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+
+                <div class="relatorio-opcao-info">
+
+                    <h3>
+                        Obras
+                    </h3>
+
+                    <p>
+                        Consulte obras, responsáveis, clientes e situação.
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right relatorio-opcao-seta"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         RESULTADO DO RELATÓRIO
+    ====================================================== -->
+
+    <div
+        class="relatorio-resultado"
+        id="relatorioResultado"
+        hidden
+    >
+
+        <!-- =================================================
+             CABEÇALHO DO RESULTADO
+        ================================================== -->
+
+        <div class="relatorio-resultado-header">
+
+            <div>
+
+                <h2 id="tituloRelatorio">
+                    Relatório
+                </h2>
+
+                <p id="descricaoRelatorio">
+                    Resultado do relatório selecionado.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 AÇÕES
+            ================================================== -->
+
+            <div class="relatorio-resultado-acoes">
+
+                <button
+                    type="button"
+                    id="btnImprimirRelatorio"
+                    class="btn btn-primary"
+                >
+
+                    <i class="fa-solid fa-print"></i>
+
+                    Imprimir
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="btnExportarRelatorio"
+                    class="btn btn-secondary"
+                >
+
+                    <i class="fa-solid fa-file-csv"></i>
+
+                    Exportar CSV
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             FILTROS
+        ================================================== -->
+
+        <div class="relatorio-filtros">
+
+            <div class="relatorio-filtro">
+
+                <label for="pesquisarRelatorio">
+                    Pesquisar
+                </label>
+
+                <input
+                    type="search"
+                    id="pesquisarRelatorio"
+                    placeholder="Pesquisar no relatório..."
+                >
+
+            </div>
+
+
+            <div class="relatorio-filtro">
+
+                <label for="dataInicialRelatorio">
+                    Data inicial
+                </label>
+
+                <input
+                    type="date"
+                    id="dataInicialRelatorio"
+                >
+
+            </div>
+
+
+            <div class="relatorio-filtro">
+
+                <label for="dataFinalRelatorio">
+                    Data final
+                </label>
+
+                <input
+                    type="date"
+                    id="dataFinalRelatorio"
+                >
+
+            </div>
+
+
+            <div class="relatorio-filtro">
+
+                <label for="filtroRelatorio">
+                    Filtro
+                </label>
+
+                <select id="filtroRelatorio">
+
+                    <option value="">
+                        Todos
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             TABELA
+        ================================================== -->
+
+        <div class="relatorio-tabela-wrapper">
+
+            <table class="relatorio-tabela">
+
+                <thead>
+
+                    <tr id="cabecalhoRelatorio">
+                    </tr>
+
+                </thead>
+
+                <tbody id="listaRelatorio">
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- =================================================
+             ESTADO VAZIO
+        ================================================== -->
+
+        <div
+            class="relatorio-estado-vazio"
+            id="estadoVazioRelatorio"
+            hidden
+        >
+
+            <div class="relatorio-estado-icone">
+
+                <i class="fa-solid fa-file-circle-xmark"></i>
+
+            </div>
+
+            <h3>
+                Nenhum registro encontrado
+            </h3>
+
+            <p>
+                Não existem dados correspondentes aos filtros selecionados.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+
+    <div class="relatorios-footer">
+
+        <span>
+            BEQ Empreendimentos
+        </span>
+
+        <span>
+            Relatórios e informações do sistema
+        </span>
+
+    </div>
+
+</section>

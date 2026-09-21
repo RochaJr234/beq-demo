@@ -1,0 +1,464 @@
+<section class="page">
+
+    <!-- =======================================================
+         CABEÇALHO
+    ======================================================== -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1 class="page-title">
+
+                Fornecedores
+
+            </h1>
+
+            <p class="page-description">
+
+                Gerencie todos os fornecedores da BEQ Empreendimentos.
+
+            </p>
+
+        </div>
+
+        <button
+            id="btnNovoFornecedor"
+            class="btn btn-primary">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Novo Fornecedor
+
+        </button>
+
+    </div>
+
+    <!-- =======================================================
+         INDICADORES
+    ======================================================== -->
+
+    <div class="dashboard-cards">
+
+        <div class="card dashboard-card">
+
+            <div>
+
+                <span>Total de Fornecedores</span>
+
+                <h2 id="totalFornecedores">0</h2>
+
+            </div>
+
+            <i class="fa-solid fa-truck"></i>
+
+        </div>
+
+        <div class="card dashboard-card">
+
+            <div>
+
+                <span>Fornecedores Ativos</span>
+
+                <h2 id="fornecedoresAtivos">0</h2>
+
+            </div>
+
+            <i class="fa-solid fa-circle-check"></i>
+
+        </div>
+
+        <div class="card dashboard-card">
+
+            <div>
+
+                <span>Cidades Atendidas</span>
+
+                <h2 id="totalCidades">0</h2>
+
+            </div>
+
+            <i class="fa-solid fa-location-dot"></i>
+
+        </div>
+
+    </div>
+
+   <!-- =======================================================
+     TABELA
+======================================================== -->
+
+<div class="table-header">
+
+    <input
+        id="pesquisarFornecedor"
+        class="input"
+        type="text"
+        placeholder="Pesquisar fornecedor..."
+    >
+
+    <button
+        id="btnMostrarFornecedores"
+        class="btn btn-secondary"
+        type="button"
+    >
+
+        <i class="fa-solid fa-eye-slash"></i>
+
+        Ocultar Fornecedores
+
+    </button>
+
+</div>
+
+
+<div
+    id="cardTabelaFornecedores"
+    class="card"
+>
+
+    <div class="table-responsive">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Empresa</th>
+
+                    <th>CNPJ</th>
+
+                    <th>Telefone</th>
+
+                    <th>Cidade</th>
+
+                    <th>Status</th>
+
+                    <th>Ações</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="listaFornecedores">
+
+                <tr>
+
+                    <td
+                        colspan="6"
+                        class="empty-table"
+                    >
+
+                        Nenhum fornecedor cadastrado.
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+    <!-- =======================================================
+         MODAL
+    ======================================================== -->
+
+    <div
+        id="modalFornecedor"
+        class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>
+
+                    Cadastro de Fornecedor
+
+                </h2>
+
+                <button
+                    id="fecharModalFornecedor"
+                    class="modal-close">
+
+                    ×
+
+                </button>
+
+            </div>
+
+         <div class="modal-body fornecedor-modal-body">
+
+    <div class="form-grid">
+
+        <!-- RAZÃO SOCIAL -->
+        <div class="form-group">
+
+            <label
+                for="fornecedorRazao"
+                class="form-label">
+
+                Razão Social
+
+            </label>
+
+            <input
+                id="fornecedorRazao"
+                class="form-control"
+                type="text"
+                placeholder="Digite a razão social"
+            >
+
+        </div>
+
+
+        <!-- NOME FANTASIA -->
+        <div class="form-group">
+
+            <label
+                for="fornecedorFantasia"
+                class="form-label">
+
+                Nome Fantasia
+
+            </label>
+
+            <input
+                id="fornecedorFantasia"
+                class="form-control"
+                type="text"
+                placeholder="Digite o nome fantasia"
+            >
+
+        </div>
+
+
+        <!-- CNPJ -->
+        <div class="form-group">
+
+            <label
+                for="fornecedorCnpj"
+                class="form-label">
+
+                CNPJ
+
+            </label>
+
+            <input
+                id="fornecedorCnpj"
+                class="form-control"
+                type="text"
+                placeholder="00.000.000/0000-00"
+            >
+
+        </div>
+
+
+        <!-- INSCRIÇÃO ESTADUAL -->
+        <div class="form-group">
+
+            <label
+                for="fornecedorIe"
+                class="form-label">
+
+                Inscrição Estadual
+
+            </label>
+
+            <input
+                id="fornecedorIe"
+                class="form-control"
+                type="text"
+                placeholder="Digite a inscrição estadual"
+            >
+
+        </div>
+
+
+        <!-- RESPONSÁVEL -->
+        <div class="form-group">
+
+            <label
+                for="fornecedorResponsavel"
+                class="form-label">
+
+                Responsável
+
+            </label>
+
+            <input
+                id="fornecedorResponsavel"
+                class="form-control"
+                type="text"
+                placeholder="Nome do responsável"
+            >
+
+        </div>
+
+
+        <!-- TELEFONE -->
+        <div class="form-group">
+
+            <label
+                for="fornecedorTelefone"
+                class="form-label">
+
+                Telefone
+
+            </label>
+
+            <input
+                id="fornecedorTelefone"
+                class="form-control"
+                type="text"
+                placeholder="(00) 0000-0000"
+            >
+
+        </div>
+
+
+        <!-- WHATSAPP -->
+        <div class="form-group">
+
+            <label
+                for="fornecedorWhatsapp"
+                class="form-label">
+
+                WhatsApp
+
+            </label>
+
+            <input
+                id="fornecedorWhatsapp"
+                class="form-control"
+                type="text"
+                placeholder="(00) 00000-0000"
+            >
+
+        </div>
+
+
+        <!-- E-MAIL -->
+        <div class="form-group">
+
+            <label
+                for="fornecedorEmail"
+                class="form-label">
+
+                E-mail
+
+            </label>
+
+            <input
+                id="fornecedorEmail"
+                class="form-control"
+                type="email"
+                placeholder="fornecedor@email.com"
+            >
+
+        </div>
+
+
+        <!-- CIDADE -->
+        <div class="form-group">
+
+            <label
+                for="fornecedorCidade"
+                class="form-label">
+
+                Cidade
+
+            </label>
+
+            <input
+                id="fornecedorCidade"
+                class="form-control"
+                type="text"
+                placeholder="Digite a cidade"
+            >
+
+        </div>
+
+
+        <!-- STATUS -->
+        <div class="form-group">
+
+            <label
+                for="fornecedorStatus"
+                class="form-label">
+
+                Status
+
+            </label>
+
+            <select
+                id="fornecedorStatus"
+                class="form-control">
+
+                <option value="Ativo">
+                    Ativo
+                </option>
+
+                <option value="Inativo">
+                    Inativo
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- OBSERVAÇÕES -->
+        <div class="form-group form-group-full">
+
+            <label
+                for="fornecedorObservacoes"
+                class="form-label">
+
+                Observações
+
+            </label>
+
+            <textarea
+                id="fornecedorObservacoes"
+                class="form-control"
+                rows="4"
+                placeholder="Digite informações adicionais sobre o fornecedor..."
+            ></textarea>
+
+        </div>
+
+    </div>
+
+</div>
+
+            <div class="modal-footer">
+
+                <button
+                    id="cancelarFornecedor"
+                    class="btn btn-secondary">
+
+                    Cancelar
+
+                </button>
+
+                <button
+                    id="salvarFornecedor"
+                    class="btn btn-primary">
+
+                    Salvar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
