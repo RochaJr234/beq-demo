@@ -125,21 +125,44 @@ class BEQApp {
            Evento do botão
         ---------------------------------------------- */
 
-        btnMenu.addEventListener(
-            "click",
-            () => {
+       btnMenu.addEventListener(
+    "click",
+    () => {
 
-                document.body.classList.toggle(
-                    "sidebar-collapsed"
-                );
+        /* ==========================================
+           MOBILE
+        ========================================== */
+
+        if (window.innerWidth <= 768) {
+
+            const sidebar =
+                document.querySelector(".sidebar");
+
+            sidebar.classList.toggle("show");
+
+            document.body.classList.toggle(
+                "mobile-menu-open"
+            );
+
+            return;
+        }
 
 
-                console.log(
-                    "BEQ: Sidebar alternada."
-                );
+        /* ==========================================
+           DESKTOP / TABLET
+        ========================================== */
 
-            }
+        document.body.classList.toggle(
+            "sidebar-collapsed"
         );
+
+
+        console.log(
+            "BEQ: Sidebar alternada."
+        );
+
+    }
+);
 
     }
 
