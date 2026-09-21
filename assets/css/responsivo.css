@@ -52,52 +52,155 @@
 }
 
 
-/* ===========================================================
-   TABLETS PEQUENOS (Até 768px)
-=========================================================== */
-
 @media (max-width: 768px) {
 
+    /* ==========================================
+       SIDEBAR MOBILE
+    ========================================== */
+
     .sidebar {
+        width: min(290px, 85vw);
+
         transform: translateX(-100%);
 
-        transition: transform var(--transition-normal);
+        transition:
+            transform .30s ease;
+
+        z-index: 1000;
     }
+
 
     .sidebar.show {
         transform: translateX(0);
     }
 
-    .topbar {
-        left: 0;
 
-        padding: 0 var(--space-16);
+    /* ==========================================
+       CONTEÚDO OCUPA TODA A TELA
+    ========================================== */
+
+    .main-content {
+        margin-left: 0 !important;
     }
 
-    /* Pesquisa desaparece */
+
+    /* ==========================================
+       TOPBAR
+    ========================================== */
+
+    .topbar {
+        left: 0 !important;
+
+        width: 100% !important;
+
+        padding:
+            0 var(--space-16);
+
+        z-index: 900;
+    }
+
+
+    /* ==========================================
+       ÁREA PRINCIPAL
+    ========================================== */
+
+    .page {
+        padding:
+            20px 15px;
+    }
+
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* ==========================================
+       PESQUISA
+    ========================================== */
+
     .search-box {
         display: none;
     }
 
-    /* Empresa ativa desaparece */
+
+    /* ==========================================
+       EMPRESA ATIVA
+    ========================================== */
+
     .empresa-ativa-header {
         display: none;
     }
 
-    .page {
-        padding: var(--space-20);
-    }
+
+    /* ==========================================
+       GRID
+    ========================================== */
 
     .cards-grid {
         grid-template-columns: 1fr;
     }
 
+
+    /* ==========================================
+       FORMULÁRIOS
+    ========================================== */
+
     .form-row {
         grid-template-columns: 1fr;
     }
 
-}
 
+    /* ==========================================
+       ITENS DA SIDEBAR
+    ========================================== */
+
+    .sidebar-item {
+        height: 48px;
+
+        padding:
+            0 16px;
+
+        margin-bottom: 6px;
+    }
+
+
+    .sidebar-item span {
+        display: inline;
+    }
+
+
+    /* ==========================================
+       SOBREPOSIÇÃO
+    ========================================== */
+
+    body.mobile-menu-open::before {
+
+        content: "";
+
+        position: fixed;
+
+        inset: 0;
+
+        background:
+            rgba(15, 23, 42, 0.45);
+
+        z-index: 950;
+
+        pointer-events: auto;
+    }
+
+
+    /* ==========================================
+       TOPBAR ACIMA DA SOBREPOSIÇÃO
+    ========================================== */
+
+    body.mobile-menu-open .topbar {
+        z-index: 1100;
+    }
+
+}
 
 /* ===========================================================
    CELULARES (Até 576px)
